@@ -336,7 +336,7 @@ class ComfortJourneyAPITester:
         else:
             self.log_test("bookings", "Get user bookings", False, f"Status: {result.get('status_code')}, Error: {result.get('error', 'Unknown')}")
         
-        # Test create booking (if we have a vehicle ID)
+        # Test create booking (if we have a vehicle ID) - should now be pending_admin_approval
         if hasattr(self, 'test_vehicle_id') and self.test_vehicle_id:
             pickup_date = datetime.now() + timedelta(days=7)
             return_date = pickup_date + timedelta(days=3)
@@ -356,7 +356,11 @@ class ComfortJourneyAPITester:
                 data = result.get("data", {})
                 if "_id" in data and "booking_status" in data:
                     self.test_booking_id = data["_id"]
-                    self.log_test("bookings", "Create booking", True, f"Booking created: {data['_id']}")
+                    # Check if booking status is pending_admin_approval (enhanced workflow)
+                    if data["booking_status"] == "pending_admin_approval":
+                        self.log_test("bookings", "Create booking", True, f"Booking created with enhanced workflow: {data['_id']} (status: {data['booking_status']})")
+                    else:
+                        self.log_test("bookings", "Create booking", False, f"Expected 'pending_admin_approval' status, got: {data['booking_status']}")
                 else:
                     self.log_test("bookings", "Create booking", False, "Missing booking data")
             else:
