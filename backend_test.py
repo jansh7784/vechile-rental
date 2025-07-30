@@ -27,6 +27,8 @@ class ComfortJourneyAPITester:
             "vehicles": {"passed": 0, "failed": 0, "details": []},
             "content": {"passed": 0, "failed": 0, "details": []},
             "bookings": {"passed": 0, "failed": 0, "details": []},
+            "admin_features": {"passed": 0, "failed": 0, "details": []},
+            "whatsapp_integration": {"passed": 0, "failed": 0, "details": []},
             "database": {"passed": 0, "failed": 0, "details": []}
         }
         
