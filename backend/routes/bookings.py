@@ -415,7 +415,8 @@ async def admin_update_booking_status(
 ):
     """Update booking status (admin only)."""
     new_status = status_data.get("status")
-    allowed_statuses = ["pending", "confirmed", "cancelled", "completed"]
+    admin_notes = status_data.get("admin_notes", "")
+    allowed_statuses = ["pending_admin_approval", "admin_approved", "admin_rejected", "confirmed", "cancelled", "completed"]
     
     if new_status not in allowed_statuses:
         raise HTTPException(
@@ -424,14 +425,52 @@ async def admin_update_booking_status(
         )
     
     try:
+        # Get booking with user and vehicle details
+        booking_pipeline = [
+            {"$match": {"_id": ObjectId(booking_id)}},
+            {
+                "$lookup": {
+                    "from": "users",
+                    "localField": "user_id",
+                    "foreignField": "_id",
+                    "as": "user"
+                }
+            },
+            {
+                "$lookup": {
+                    "from": "vehicles",
+                    "localField": "vehicle_id",
+                    "foreignField": "_id",
+                    "as": "vehicle"
+                }
+            },
+            {"$unwind": "$user"},
+            {"$unwind": "$vehicle"}
+        ]
+        
+        booking_docs = await db.bookings.aggregate(booking_pipeline).to_list(length=1)
+        if not booking_docs:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail="Booking not found"
+            )
+        
+        booking = booking_docs[0]
+        user = User(**booking["user"])
+        vehicle = booking["vehicle"]
+        
+        # Update booking status
+        update_data = {
+            "booking_status": new_status,
+            "updated_at": datetime.utcnow()
+        }
+        
+        if admin_notes:
+            update_data["admin_notes"] = admin_notes
+        
         result = await db.bookings.update_one(
             {"_id": ObjectId(booking_id)},
-            {
-                "$set": {
-                    "booking_status": new_status,
-                    "updated_at": datetime.utcnow()
-                }
-            }
+            {"$set": update_data}
         )
         
         if result.modified_count == 0:
@@ -440,10 +479,109 @@ async def admin_update_booking_status(
                 detail="Booking not found"
             )
         
-        return MessageResponse(message="Booking status updated successfully")
+        # Send WhatsApp notification to user about status change
+        if new_status in ["admin_approved", "confirmed", "cancelled"]:
+            await send_whatsapp_user_notification(booking, vehicle, user, new_status)
+        
+        return MessageResponse(message=f"Booking status updated to {new_status} successfully")
         
     except Exception as e:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="Invalid booking ID"
         )
+
+@router.get("/admin/dashboard")
+async def get_admin_dashboard(current_user: User = Depends(get_admin_user)):
+    """Get admin dashboard statistics."""
+    
+    # Booking statistics
+    total_bookings = await db.bookings.count_documents({})
+    pending_approval = await db.bookings.count_documents({"booking_status": "pending_admin_approval"})
+    approved_bookings = await db.bookings.count_documents({"booking_status": "admin_approved"})
+    confirmed_bookings = await db.bookings.count_documents({"booking_status": "confirmed"})
+    completed_bookings = await db.bookings.count_documents({"booking_status": "completed"})
+    cancelled_bookings = await db.bookings.count_documents({"booking_status": {"$in": ["cancelled", "admin_rejected"]}})
+    
+    # Revenue statistics
+    revenue_pipeline = [
+        {"$match": {"booking_status": {"$in": ["confirmed", "completed"]}}},
+        {"$group": {"_id": None, "total_revenue": {"$sum": "$total_amount"}}}
+    ]
+    revenue_result = await db.bookings.aggregate(revenue_pipeline).to_list(length=1)
+    total_revenue = revenue_result[0]["total_revenue"] if revenue_result else 0
+    
+    # Recent bookings needing attention
+    recent_pending = await db.bookings.find(
+        {"booking_status": "pending_admin_approval"}
+    ).sort("created_at", -1).limit(5).to_list(length=5)
+    
+    # Populate user and vehicle details for recent bookings
+    for booking in recent_pending:
+        user = await db.users.find_one({"_id": booking["user_id"]})
+        vehicle = await db.vehicles.find_one({"_id": booking["vehicle_id"]})
+        booking["user"] = user
+        booking["vehicle"] = vehicle
+    
+    return {
+        "booking_stats": {
+            "total": total_bookings,
+            "pending_approval": pending_approval,
+            "approved": approved_bookings,
+            "confirmed": confirmed_bookings,
+            "completed": completed_bookings,
+            "cancelled": cancelled_bookings
+        },
+        "revenue": {
+            "total": total_revenue
+        },
+        "recent_pending_bookings": recent_pending
+    }
+
+@router.get("/admin/pending")
+async def get_pending_bookings(
+    current_user: User = Depends(get_admin_user),
+    page: int = Query(1, ge=1),
+    per_page: int = Query(10, ge=1, le=50)
+):
+    """Get all pending admin approval bookings."""
+    
+    skip = (page - 1) * per_page
+    
+    # Get bookings with user and vehicle details
+    pipeline = [
+        {"$match": {"booking_status": "pending_admin_approval"}},
+        {"$sort": {"created_at": -1}},
+        {"$skip": skip},
+        {"$limit": per_page},
+        {
+            "$lookup": {
+                "from": "users",
+                "localField": "user_id",
+                "foreignField": "_id",
+                "as": "user"
+            }
+        },
+        {
+            "$lookup": {
+                "from": "vehicles",
+                "localField": "vehicle_id",
+                "foreignField": "_id",
+                "as": "vehicle"
+            }
+        },
+        {"$unwind": "$user"},
+        {"$unwind": "$vehicle"}
+    ]
+    
+    bookings_docs = await db.bookings.aggregate(pipeline).to_list(length=per_page)
+    total = await db.bookings.count_documents({"booking_status": "pending_admin_approval"})
+    total_pages = (total + per_page - 1) // per_page
+    
+    return {
+        "data": bookings_docs,
+        "total": total,
+        "page": page,
+        "per_page": per_page,
+        "total_pages": total_pages
+    }
