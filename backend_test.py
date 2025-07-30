@@ -428,7 +428,7 @@ class ComfortJourneyAPITester:
 def main():
     """Main function to run tests"""
     # Get backend URL from environment or use default
-    backend_url = "https://abf87d13-230c-4b15-99de-dfcef446723c.preview.emergentagent.com/api"
+    backend_url = "https://abf87d13-230c-4b15-99de-dfcef446723c.preview.emergentagent.com"
     
     print(f"Backend URL: {backend_url}")
     
