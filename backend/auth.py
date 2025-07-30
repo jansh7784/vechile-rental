@@ -21,9 +21,18 @@ pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 security = HTTPBearer()
 
 # Database connection
-mongo_url = os.environ['MONGO_URL']
-client = AsyncIOMotorClient(mongo_url)
-db = client[os.environ['DB_NAME']]
+def get_db_connection():
+    mongo_url = os.environ.get('MONGO_URL', 'mongodb://localhost:27017')
+    client = AsyncIOMotorClient(mongo_url)
+    db_name = os.environ.get('DB_NAME', 'test_database')
+    return client, client[db_name]
+
+# Initialize database connection
+try:
+    client, db = get_db_connection()
+except Exception as e:
+    print(f"Database connection error: {e}")
+    client, db = None, None
 
 def verify_password(plain_password: str, hashed_password: str) -> bool:
     """Verify a password against its hash."""
