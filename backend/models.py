@@ -40,6 +40,8 @@ class UserLogin(BaseModel):
     password: str
 
 class User(BaseModel):
+    model_config = ConfigDict(populate_by_name=True, arbitrary_types_allowed=True, json_encoders={ObjectId: str})
+    
     id: PyObjectId = Field(default_factory=PyObjectId, alias="_id")
     name: str
     email: EmailStr
@@ -49,11 +51,6 @@ class User(BaseModel):
     profile: UserProfile = UserProfile()
     created_at: datetime = Field(default_factory=datetime.utcnow)
     updated_at: datetime = Field(default_factory=datetime.utcnow)
-
-    class Config:
-        allow_population_by_field_name = True
-        arbitrary_types_allowed = True
-        json_encoders = {ObjectId: str}
 
 class Token(BaseModel):
     access_token: str
