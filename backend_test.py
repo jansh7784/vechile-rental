@@ -174,13 +174,34 @@ class ComfortJourneyAPITester:
         """Test vehicle management endpoints"""
         print("\n🚗 Testing Vehicle Management...")
         
-        # Test get all vehicles
+        # Test get all vehicles - should now have 9 vehicles
         result = self.make_request("GET", "/api/vehicles")
         if result.get("status_code") == 200:
             data = result.get("data", {})
             if "data" in data and isinstance(data["data"], list):
                 vehicle_count = len(data["data"])
-                self.log_test("vehicles", "Get all vehicles", True, f"Retrieved {vehicle_count} vehicles")
+                expected_vehicles = ["Scorpio S11", "Mahindra 3XO AX7L", "Dzire new", "Swift Epic new"]
+                
+                # Check if we have 9 vehicles as expected
+                if vehicle_count == 9:
+                    self.log_test("vehicles", "Get all vehicles", True, f"Retrieved {vehicle_count} vehicles (enhanced with new models)")
+                    
+                    # Check for specific new vehicles mentioned in requirements
+                    vehicle_names = [v.get("name", "") for v in data["data"]]
+                    found_new_vehicles = []
+                    for expected in expected_vehicles:
+                        for name in vehicle_names:
+                            if expected.lower() in name.lower():
+                                found_new_vehicles.append(expected)
+                                break
+                    
+                    if found_new_vehicles:
+                        self.log_test("vehicles", "New vehicle models", True, f"Found new models: {', '.join(found_new_vehicles)}")
+                    else:
+                        self.log_test("vehicles", "New vehicle models", False, "Expected new models not found in vehicle list")
+                        
+                else:
+                    self.log_test("vehicles", "Get all vehicles", False, f"Expected 9 vehicles, got {vehicle_count}")
                 
                 # Store a vehicle ID for individual testing
                 self.test_vehicle_id = data["data"][0]["_id"] if data["data"] else None
