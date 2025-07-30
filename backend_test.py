@@ -328,7 +328,7 @@ class ComfortJourneyAPITester:
                 "special_requests": "Please ensure the vehicle is clean and fueled"
             }
             
-            result = self.make_request("POST", "/api/bookings", booking_data)
+            result = self.make_request("POST", "/api/bookings/", booking_data)
             if result.get("status_code") == 200:
                 data = result.get("data", {})
                 if "_id" in data and "booking_status" in data:
