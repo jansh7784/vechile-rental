@@ -6,6 +6,7 @@ from auth import get_current_active_user, get_admin_user, User
 from datetime import datetime, timedelta
 import os
 from bson import ObjectId
+import httpx
 
 router = APIRouter(prefix="/bookings", tags=["Bookings"])
 
@@ -14,6 +15,74 @@ mongo_url = os.environ.get('MONGO_URL', 'mongodb://localhost:27017')
 db_name = os.environ.get('DB_NAME', 'test_database')
 client = AsyncIOMotorClient(mongo_url)
 db = client[db_name]
+
+# WhatsApp configuration
+WHATSAPP_NUMBER = "+916267679992"  # Same as reference website
+
+async def send_whatsapp_admin_notification(booking_dict: dict, vehicle: dict, user: User):
+    """Send WhatsApp notification to admin about new booking."""
+    try:
+        pickup_date = booking_dict['pickup_date'].strftime('%d/%m/%Y')
+        return_date = booking_dict['return_date'].strftime('%d/%m/%Y')
+        
+        message = f"""🚗 *NEW BOOKING ALERT* 🚗
+
+*Customer Details:*
+👤 Name: {user.name}
+📞 Phone: {user.phone}
+📧 Email: {user.email}
+
+*Vehicle Details:*
+🚙 Vehicle: {vehicle['name']}
+🏷️ Category: {vehicle['category']}
+💰 Amount: ₹{booking_dict['total_amount']:.2f}
+
+*Booking Details:*
+📅 Pickup: {pickup_date}
+📅 Return: {return_date}
+📍 Location: {booking_dict.get('pickup_location', 'Not specified')}
+
+*Special Requests:*
+{booking_dict.get('special_requests', 'None')}
+
+🔔 Please approve or reject this booking in the admin panel.
+
+Booking ID: {str(booking_dict['_id'])}"""
+
+        # For now, we'll log the message. In production, integrate with WhatsApp Business API
+        print(f"WhatsApp notification (to {WHATSAPP_NUMBER}):", message)
+        
+        # Update booking to mark WhatsApp as sent
+        await db.bookings.update_one(
+            {"_id": booking_dict['_id']},
+            {"$set": {"whatsapp_sent": True}}
+        )
+        
+        return True
+        
+    except Exception as e:
+        print(f"WhatsApp notification failed: {e}")
+        return False
+
+async def send_whatsapp_user_notification(booking_dict: dict, vehicle: dict, user: User, status: str):
+    """Send WhatsApp notification to user about booking status."""
+    try:
+        status_messages = {
+            "admin_approved": f"✅ *BOOKING APPROVED* ✅\n\nHi {user.name}! Your booking for {vehicle['name']} has been approved. Please proceed with payment to confirm your booking.",
+            "confirmed": f"🎉 *BOOKING CONFIRMED* 🎉\n\nHi {user.name}! Your booking for {vehicle['name']} is confirmed. We'll contact you soon with pickup details.",
+            "cancelled": f"❌ *BOOKING CANCELLED* ❌\n\nHi {user.name}, your booking for {vehicle['name']} has been cancelled. Contact us for more details.",
+        }
+        
+        message = status_messages.get(status, f"Your booking status has been updated to: {status}")
+        
+        # For now, we'll log the message. In production, integrate with WhatsApp Business API
+        print(f"WhatsApp notification (to {user.phone}):", message)
+        
+        return True
+        
+    except Exception as e:
+        print(f"WhatsApp notification failed: {e}")
+        return False
 
 def calculate_booking_amount(vehicle_pricing: dict, pickup_date: datetime, return_date: datetime) -> float:
     """Calculate total booking amount."""
