@@ -129,21 +129,21 @@ async def seed_vehicles():
                 "updated_at": datetime.utcnow()
             },
             {
-                "name": "Mahindra Scorpio",
+                "name": "Scorpio S11",
                 "category": "SUV",
                 "image": "https://images.unsplash.com/photo-1565043666747-69f6646db940?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzl8MHwxfHNlYXJjaHwxfHxjYXIlMjByZW50YWx8ZW58MHx8fHwxNzUzODk3NTgzfDA&ixlib=rb-4.1.0&q=85",
                 "images": [],
                 "transmission": "Manual",
                 "fuel_type": "Diesel",
-                "features": "Self drive & without fuel",
+                "features": "Self-Drive & Without Fuel",
                 "ac": True,
-                "seating": "7 Person",
-                "location": "Indore",
+                "seating": "7 Persons",
+                "location": "Indore(MP)",
                 "pricing": {
-                    "daily": 5500
+                    "daily": 5000
                 },
                 "extra_km_rate": "₹10/km",
-                "discount": "5%",
+                "discount": None,
                 "available": True,
                 "specifications": {
                     "engine": "2.2L Diesel",
@@ -155,25 +155,51 @@ async def seed_vehicles():
                 "updated_at": datetime.utcnow()
             },
             {
+                "name": "Mahindra 3XO AX7L", 
+                "category": "Compact SUV",
+                "image": "https://images.unsplash.com/photo-1502161254066-6c74afbf07aa?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzl8MHwxfHNlYXJjaHw1fHxjYXIlMjByZW50YWx8ZW58MHx8fHwxNzUzODk3NTgzfDA&ixlib=rb-4.1.0&q=85",
+                "images": [],
+                "transmission": "Manual",
+                "fuel_type": "Diesel", 
+                "features": "Self-Drive & Without Fuel",
+                "ac": True,
+                "seating": "5 Persons",
+                "location": "Indore(MP)",
+                "pricing": {
+                    "daily": 4000
+                },
+                "extra_km_rate": "₹8/km",
+                "discount": "5%",
+                "available": True,
+                "specifications": {
+                    "engine": "1.5L Diesel",
+                    "mileage": "20 km/l", 
+                    "top_speed": "170 km/h",
+                    "safety_rating": 4
+                },
+                "created_at": datetime.utcnow(),
+                "updated_at": datetime.utcnow()
+            },
+            {
                 "name": "Toyota Fortuner",
                 "category": "Premium SUV",
                 "image": "https://images.pexels.com/photos/164634/pexels-photo-164634.jpeg",
                 "images": [],
-                "transmission": "Automatic",
-                "fuel_type": "Diesel",
-                "features": "Self drive & without fuel",
+                "transmission": "Manual",
+                "fuel_type": "Petrol",
+                "features": "Self-Drive & Without Fuel",
                 "ac": True,
-                "seating": "7 Person",
-                "location": "Indore",
+                "seating": "5 Persons",
+                "location": "Indore(MP)",
                 "pricing": {
-                    "daily": 8000
+                    "daily": 2500
                 },
-                "extra_km_rate": "₹15/km",
+                "extra_km_rate": "₹5/km",
                 "discount": None,
                 "available": True,
                 "specifications": {
-                    "engine": "2.8L Diesel",
-                    "mileage": "10 km/l",
+                    "engine": "2.8L Petrol",
+                    "mileage": "12 km/l",
                     "top_speed": "190 km/h",
                     "safety_rating": 5
                 },
@@ -181,25 +207,51 @@ async def seed_vehicles():
                 "updated_at": datetime.utcnow()
             },
             {
-                "name": "Maruti Swift",
-                "category": "Hatchback",
+                "name": "Dzire new",
+                "category": "Sedan",
                 "image": "https://images.pexels.com/photos/3369191/pexels-photo-3369191.jpeg",
                 "images": [],
                 "transmission": "Manual",
-                "fuel_type": "Petrol",
-                "features": "Self drive & without fuel",
+                "fuel_type": "CNG + Petrol",
+                "features": "Self-Drive & Without Fuel",
                 "ac": True,
-                "seating": "4 Person",
+                "seating": "5 Persons",
+                "location": "Indore(MP)",
+                "pricing": {
+                    "daily": 2500
+                },
+                "extra_km_rate": "₹6/km",
+                "discount": None,
+                "available": True,
+                "specifications": {
+                    "engine": "1.2L CNG+Petrol",
+                    "mileage": "25 km/l",
+                    "top_speed": "165 km/h",
+                    "safety_rating": 4
+                },
+                "created_at": datetime.utcnow(),
+                "updated_at": datetime.utcnow()
+            },
+            {
+                "name": "Swift Epic new",
+                "category": "Hatchback",
+                "image": "https://images.unsplash.com/photo-1600608672825-b4fb6c2781de?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzl8MHwxfHNlYXJjaHw2fHxjYXIlMjByZW50YWx8ZW58MHx8fHwxNzUzODk3NTgzfDA&ixlib=rb-4.1.0&q=85",
+                "images": [],
+                "transmission": "Manual",
+                "fuel_type": "Petrol",
+                "features": "Self Drive & without Fuel",
+                "ac": True,
+                "seating": "5 Person",
                 "location": "Indore",
                 "pricing": {
                     "daily": 2500
                 },
-                "extra_km_rate": "₹8/km",
-                "discount": "15% OFF",
+                "extra_km_rate": "₹5/km",
+                "discount": "5%",
                 "available": True,
                 "specifications": {
                     "engine": "1.2L Petrol",
-                    "mileage": "22 km/l",
+                    "mileage": "20 km/l",
                     "top_speed": "165 km/h",
                     "safety_rating": 4
                 },
