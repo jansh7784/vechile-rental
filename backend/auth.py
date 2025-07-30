@@ -64,12 +64,14 @@ async def get_user_by_id(user_id: str) -> Optional[User]:
 
 async def authenticate_user(email: str, password: str) -> Optional[User]:
     """Authenticate user with email and password."""
-    user = await get_user_by_email(email)
-    if not user:
+    user_doc = await db.users.find_one({"email": email})
+    if not user_doc:
         return None
     if not verify_password(password, user_doc["password"]):
         return None
-    return user
+    # Remove password before creating User object
+    del user_doc["password"]
+    return User(**user_doc)
 
 async def get_current_user(credentials: HTTPAuthorizationCredentials = Depends(security)) -> User:
     """Get current authenticated user from JWT token."""
