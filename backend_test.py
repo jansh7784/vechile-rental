@@ -331,9 +331,9 @@ class ComfortJourneyAPITester:
             result = self.make_request("POST", "/api/bookings", booking_data)
             if result.get("status_code") == 200:
                 data = result.get("data", {})
-                if "id" in data and "booking_status" in data:
-                    self.test_booking_id = data["id"]
-                    self.log_test("bookings", "Create booking", True, f"Booking created: {data['id']}")
+                if "_id" in data and "booking_status" in data:
+                    self.test_booking_id = data["_id"]
+                    self.log_test("bookings", "Create booking", True, f"Booking created: {data['_id']}")
                 else:
                     self.log_test("bookings", "Create booking", False, "Missing booking data")
             else:
