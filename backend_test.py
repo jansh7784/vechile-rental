@@ -366,7 +366,102 @@ class ComfortJourneyAPITester:
             else:
                 self.log_test("bookings", "Create booking", False, f"Status: {result.get('status_code')}, Error: {result.get('error', 'Unknown')}")
 
-    def test_error_handling(self):
+    def test_admin_features(self):
+        """Test admin dashboard and booking management features"""
+        print("\n👑 Testing Admin Features...")
+        
+        # Test admin login
+        admin_login_data = {
+            "email": "admin@thecomfortjourney.com",
+            "password": "admin123"
+        }
+        
+        result = self.make_request("POST", "/api/auth/login", admin_login_data)
+        if result.get("status_code") == 200:
+            data = result.get("data", {})
+            if "access_token" in data:
+                self.admin_token = data["access_token"]
+                self.log_test("admin_features", "Admin login", True, "Admin logged in successfully")
+            else:
+                self.log_test("admin_features", "Admin login", False, "Missing admin access token")
+                return
+        else:
+            self.log_test("admin_features", "Admin login", False, f"Status: {result.get('status_code')}, Error: {result.get('error', 'Unknown')}")
+            return
+        
+        # Test admin dashboard statistics
+        old_token = self.auth_token
+        self.auth_token = self.admin_token
+        
+        result = self.make_request("GET", "/api/bookings/admin/dashboard")
+        if result.get("status_code") == 200:
+            data = result.get("data", {})
+            if "booking_stats" in data and "revenue" in data:
+                stats = data["booking_stats"]
+                self.log_test("admin_features", "Admin dashboard", True, f"Dashboard stats: {stats.get('total', 0)} total bookings, {stats.get('pending_approval', 0)} pending approval")
+            else:
+                self.log_test("admin_features", "Admin dashboard", False, "Missing dashboard statistics")
+        else:
+            self.log_test("admin_features", "Admin dashboard", False, f"Status: {result.get('status_code')}, Error: {result.get('error', 'Unknown')}")
+        
+        # Test get pending bookings for admin approval
+        result = self.make_request("GET", "/api/bookings/admin/pending")
+        if result.get("status_code") == 200:
+            data = result.get("data", {})
+            if "data" in data:
+                pending_count = len(data["data"])
+                self.log_test("admin_features", "Pending bookings", True, f"Retrieved {pending_count} pending approval bookings")
+            else:
+                self.log_test("admin_features", "Pending bookings", False, "Invalid response format")
+        else:
+            self.log_test("admin_features", "Pending bookings", False, f"Status: {result.get('status_code')}, Error: {result.get('error', 'Unknown')}")
+        
+        # Test admin booking approval (if we have a test booking)
+        if hasattr(self, 'test_booking_id') and self.test_booking_id:
+            approval_data = {
+                "status": "admin_approved",
+                "admin_notes": "Booking approved after verification"
+            }
+            
+            result = self.make_request("PUT", f"/api/bookings/admin/{self.test_booking_id}/status", approval_data)
+            if result.get("status_code") == 200:
+                self.log_test("admin_features", "Booking approval", True, "Admin successfully approved booking")
+            else:
+                self.log_test("admin_features", "Booking approval", False, f"Status: {result.get('status_code')}, Error: {result.get('error', 'Unknown')}")
+        
+        # Restore original token
+        self.auth_token = old_token
+
+    def test_whatsapp_integration(self):
+        """Test WhatsApp integration for booking notifications"""
+        print("\n📱 Testing WhatsApp Integration...")
+        
+        # Test WhatsApp link generation (if we have a test booking)
+        if hasattr(self, 'test_booking_id') and self.test_booking_id:
+            result = self.make_request("GET", f"/api/content/whatsapp/booking/{self.test_booking_id}")
+            if result.get("status_code") == 200:
+                data = result.get("data", {})
+                if "whatsapp_url" in data and "message" in data:
+                    whatsapp_url = data["whatsapp_url"]
+                    message = data["message"]
+                    
+                    # Verify WhatsApp URL format
+                    if "wa.me/916267679992" in whatsapp_url and "text=" in whatsapp_url:
+                        self.log_test("whatsapp_integration", "WhatsApp URL generation", True, "WhatsApp URL generated with correct format")
+                        
+                        # Verify message contains booking details
+                        if self.test_booking_id in message and "Vehicle:" in message and "Amount:" in message:
+                            self.log_test("whatsapp_integration", "WhatsApp message format", True, "Message contains proper booking details")
+                        else:
+                            self.log_test("whatsapp_integration", "WhatsApp message format", False, "Message missing booking details")
+                    else:
+                        self.log_test("whatsapp_integration", "WhatsApp URL generation", False, "Invalid WhatsApp URL format")
+                else:
+                    self.log_test("whatsapp_integration", "WhatsApp URL generation", False, "Missing WhatsApp URL or message")
+            else:
+                self.log_test("whatsapp_integration", "WhatsApp URL generation", False, f"Status: {result.get('status_code')}, Error: {result.get('error', 'Unknown')}")
+        else:
+            self.log_test("whatsapp_integration", "WhatsApp URL generation", False, "No test booking available for WhatsApp testing")
         """Test error handling for invalid requests"""
         print("\n⚠️  Testing Error Handling...")
         
