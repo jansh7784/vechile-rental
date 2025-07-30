@@ -181,7 +181,7 @@ class ComfortJourneyAPITester:
                 self.log_test("vehicles", "Get all vehicles", True, f"Retrieved {vehicle_count} vehicles")
                 
                 # Store a vehicle ID for individual testing
-                self.test_vehicle_id = data["data"][0]["id"] if data["data"] else None
+                self.test_vehicle_id = data["data"][0]["_id"] if data["data"] else None
             else:
                 self.log_test("vehicles", "Get all vehicles", False, "Invalid response format")
         else:
