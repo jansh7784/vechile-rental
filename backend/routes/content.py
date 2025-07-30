@@ -161,9 +161,53 @@ async def submit_contact_message(contact_data: ContactMessage):
     
     await db.contacts.insert_one(contact_dict)
     
-    # TODO: Send email notification to admin
+    # TODO: Send email notification to admin when Gmail SMTP is configured
     
     return MessageResponse(message="Thank you for your message. We'll get back to you soon!")
+
+@router.get("/whatsapp/booking/{booking_id}")
+async def redirect_to_whatsapp(booking_id: str):
+    """Generate WhatsApp link for booking confirmation."""
+    try:
+        # Get booking details
+        booking = await db.bookings.find_one({"_id": ObjectId(booking_id)})
+        if not booking:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail="Booking not found"
+            )
+        
+        # Get vehicle details
+        vehicle = await db.vehicles.find_one({"_id": booking["vehicle_id"]})
+        
+        # Format message for WhatsApp
+        pickup_date = booking['pickup_date'].strftime('%d/%m/%Y')
+        return_date = booking['return_date'].strftime('%d/%m/%Y')
+        
+        message = f"""Hi! I want to confirm my booking:
+
+🚗 Vehicle: {vehicle['name']}
+📅 Pickup: {pickup_date}
+📅 Return: {return_date}
+💰 Amount: ₹{booking['total_amount']:.2f}
+🆔 Booking ID: {booking_id}
+
+Please confirm my booking details."""
+        
+        # URL encode the message
+        import urllib.parse
+        encoded_message = urllib.parse.quote(message)
+        
+        # WhatsApp number from reference website
+        whatsapp_url = f"https://wa.me/916267679992?text={encoded_message}"
+        
+        return {"whatsapp_url": whatsapp_url, "message": message}
+        
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Invalid booking ID"
+        )
 
 @router.get("/contact/messages")
 async def get_contact_messages(
