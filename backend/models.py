@@ -138,7 +138,10 @@ class Booking(BaseModel):
     pickup_location: str
     special_requests: Optional[str] = None
     total_amount: float
-    booking_status: str = "pending"  # pending, confirmed, cancelled, completed
+    booking_status: str = "pending_admin_approval"  # pending_admin_approval, admin_approved, admin_rejected, confirmed, cancelled, completed
+    admin_notes: Optional[str] = ""
+    whatsapp_sent: bool = False
+    email_sent: bool = False
     payment_details: PaymentDetails
     created_at: datetime = Field(default_factory=datetime.utcnow)
     updated_at: datetime = Field(default_factory=datetime.utcnow)
