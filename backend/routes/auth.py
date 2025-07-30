@@ -16,9 +16,10 @@ from bson import ObjectId
 router = APIRouter(prefix="/auth", tags=["Authentication"])
 
 # Database connection
-mongo_url = os.environ['MONGO_URL']
+mongo_url = os.environ.get('MONGO_URL', 'mongodb://localhost:27017')
+db_name = os.environ.get('DB_NAME', 'test_database')
 client = AsyncIOMotorClient(mongo_url)
-db = client[os.environ['DB_NAME']]
+db = client[db_name]
 
 @router.post("/register", response_model=Token)
 async def register_user(user_data: UserCreate):
