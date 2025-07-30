@@ -218,6 +218,8 @@ class TestimonialCreate(BaseModel):
     image: Optional[str] = None
 
 class Testimonial(BaseModel):
+    model_config = ConfigDict(populate_by_name=True, arbitrary_types_allowed=True, json_encoders={ObjectId: str})
+    
     id: PyObjectId = Field(default_factory=PyObjectId, alias="_id")
     name: str
     location: str
@@ -226,11 +228,6 @@ class Testimonial(BaseModel):
     image: Optional[str] = None
     approved: bool = False
     created_at: datetime = Field(default_factory=datetime.utcnow)
-
-    class Config:
-        allow_population_by_field_name = True
-        arbitrary_types_allowed = True
-        json_encoders = {ObjectId: str}
 
 # Response Models
 class MessageResponse(BaseModel):
