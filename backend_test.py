@@ -532,6 +532,8 @@ class ComfortJourneyAPITester:
         self.test_vehicles()
         self.test_content_management()
         self.test_bookings()
+        self.test_admin_features()
+        self.test_whatsapp_integration()
         self.test_error_handling()
         
         end_time = time.time()
