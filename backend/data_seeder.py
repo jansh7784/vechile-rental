@@ -508,8 +508,4 @@ async def main():
         client.close()
 
 if __name__ == "__main__":
-    # Load environment variables
-    from dotenv import load_dotenv
-    load_dotenv()
-    
     asyncio.run(main())
