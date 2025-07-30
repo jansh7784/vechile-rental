@@ -31,7 +31,7 @@ class UserProfile(BaseModel):
 class UserCreate(BaseModel):
     name: str = Field(..., min_length=2, max_length=100)
     email: EmailStr
-    phone: str = Field(..., regex=r"^\+?[1-9]\d{9,14}$")
+    phone: str = Field(..., pattern=r"^\+?[1-9]\d{9,14}$")
     password: str = Field(..., min_length=6)
 
 class UserLogin(BaseModel):
