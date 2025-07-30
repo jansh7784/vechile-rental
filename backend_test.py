@@ -303,7 +303,7 @@ class ComfortJourneyAPITester:
             return
         
         # Test get user bookings
-        result = self.make_request("GET", "/api/bookings")
+        result = self.make_request("GET", "/api/bookings/")
         if result.get("status_code") == 200:
             data = result.get("data", [])
             if isinstance(data, list):
