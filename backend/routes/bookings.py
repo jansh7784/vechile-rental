@@ -174,7 +174,7 @@ async def create_booking(
     booking_dict["_id"] = result.inserted_id
     
     # TODO: Send WhatsApp notification to admin about new booking
-    # await send_whatsapp_admin_notification(booking_dict, vehicle, current_user)
+    await send_whatsapp_admin_notification(booking_dict, vehicle, current_user)
     
     return Booking(**booking_dict)
 
