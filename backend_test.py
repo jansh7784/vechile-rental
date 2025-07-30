@@ -488,6 +488,33 @@ class ComfortJourneyAPITester:
         else:
             self.log_test("authentication", "Unauthorized access", False, f"Expected 401, got: {result.get('status_code')}")
         
+    def test_error_handling(self):
+        """Test error handling for invalid requests"""
+        print("\n⚠️  Testing Error Handling...")
+        
+        # Test invalid endpoint
+        result = self.make_request("GET", "/api/nonexistent")
+        if result.get("status_code") == 404:
+            self.log_test("health_check", "Invalid endpoint", True, "Correctly returns 404")
+        else:
+            self.log_test("health_check", "Invalid endpoint", False, f"Expected 404, got: {result.get('status_code')}")
+        
+        # Test malformed request
+        result = self.make_request("POST", "/api/auth/register", {"invalid": "data"})
+        if result.get("status_code") in [400, 422]:
+            self.log_test("authentication", "Malformed request", True, "Correctly rejects invalid data")
+        else:
+            self.log_test("authentication", "Malformed request", False, f"Expected 400/422, got: {result.get('status_code')}")
+        
+        # Test unauthorized access
+        old_token = self.auth_token
+        self.auth_token = "invalid_token"
+        result = self.make_request("GET", "/api/auth/me")
+        if result.get("status_code") == 401:
+            self.log_test("authentication", "Unauthorized access", True, "Correctly rejects invalid token")
+        else:
+            self.log_test("authentication", "Unauthorized access", False, f"Expected 401, got: {result.get('status_code')}")
+        
         # Restore valid token
         self.auth_token = old_token
 
