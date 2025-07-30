@@ -210,7 +210,7 @@ class ComfortJourneyAPITester:
             result = self.make_request("GET", f"/api/vehicles/{self.test_vehicle_id}")
             if result.get("status_code") == 200:
                 data = result.get("data", {})
-                if "id" in data and data["id"] == self.test_vehicle_id:
+                if "_id" in data and data["_id"] == self.test_vehicle_id:
                     self.log_test("vehicles", "Get single vehicle", True, f"Retrieved vehicle: {data.get('name', 'Unknown')}")
                 else:
                     self.log_test("vehicles", "Get single vehicle", False, "Vehicle ID mismatch")
