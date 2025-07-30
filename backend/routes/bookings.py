@@ -59,7 +59,7 @@ async def create_booking(
     # Check for date conflicts
     conflicting_bookings = await db.bookings.find({
         "vehicle_id": ObjectId(booking_data.vehicle_id),
-        "booking_status": {"$in": ["confirmed", "pending"]},
+        "booking_status": {"$in": ["confirmed", "pending", "admin_approved"]},
         "$or": [
             {
                 "pickup_date": {"$lte": booking_data.return_date},
@@ -87,7 +87,10 @@ async def create_booking(
         "user_id": ObjectId(current_user.id),
         "vehicle_id": ObjectId(booking_data.vehicle_id),
         "total_amount": total_amount,
-        "booking_status": "pending",
+        "booking_status": "pending_admin_approval",  # New workflow: admin approval first
+        "admin_notes": "",
+        "whatsapp_sent": False,
+        "email_sent": False,
         "payment_details": {
             "payment_method": "pending",
             "payment_status": "pending",
@@ -100,6 +103,9 @@ async def create_booking(
     
     result = await db.bookings.insert_one(booking_dict)
     booking_dict["_id"] = result.inserted_id
+    
+    # TODO: Send WhatsApp notification to admin about new booking
+    # await send_whatsapp_admin_notification(booking_dict, vehicle, current_user)
     
     return Booking(**booking_dict)
 
