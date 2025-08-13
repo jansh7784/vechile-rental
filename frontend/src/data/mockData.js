@@ -1,10 +1,10 @@
-// Enhanced mock data for The Comfort Journey car rental with professional images
+// Enhanced mock data for The Comfort Journey car rental matching thecomfortjourney.com
 
 export const vehicles = [
   {
     id: 1,
     name: "Thar RWD",
-    image: "https://images.pexels.com/photos/33249918/pexels-photo-33249918.jpeg",
+    image: "https://thecomfortjourney.com/uploads/1748600549669.jpg",
     transmission: "Manual",
     fuelType: "Diesel",
     fuelEfficiency: "15/km",
@@ -17,7 +17,7 @@ export const vehicles = [
       fullDay: 5000
     },
     extraKmRate: "₹7/KM",
-    discount: "10% OFF",
+    discount: "10% off",
     category: "SUV",
     available: true,
     selfDrive: true,
@@ -26,14 +26,14 @@ export const vehicles = [
   {
     id: 2,
     name: "XUV 700",
-    image: "https://images.pexels.com/photos/33238469/pexels-photo-33238469.jpeg",
+    image: "https://thecomfortjourney.com/uploads/1745417103244.jpg",
     transmission: "Manual",
     fuelType: "Diesel",
     fuelEfficiency: "15/km",
     features: "Self drive & without fuel",
     ac: true,
     seating: "7 Person",
-    location: "Indore",
+    location: "indore",
     pricing: {
       daily: 6000
     },
@@ -47,7 +47,7 @@ export const vehicles = [
   {
     id: 3,
     name: "Scorpio N",
-    image: "https://images.pexels.com/photos/3764984/pexels-photo-3764984.jpeg",
+    image: "https://thecomfortjourney.com/uploads/1748598357178.jpg",
     transmission: "Manual",
     fuelType: "Diesel",
     fuelEfficiency: "15/km",
@@ -68,7 +68,7 @@ export const vehicles = [
   {
     id: 4,
     name: "Scorpio S11",
-    image: "https://images.pexels.com/photos/33238100/pexels-photo-33238100.jpeg",
+    image: "https://thecomfortjourney.com/uploads/1748599127822.jpg",
     transmission: "Manual",
     fuelType: "Diesel",
     fuelEfficiency: "15/km",
@@ -89,7 +89,7 @@ export const vehicles = [
   {
     id: 5,
     name: "Mahindra 3XO AX7L",
-    image: "https://images.pexels.com/photos/33229798/pexels-photo-33229798.jpeg",
+    image: "https://thecomfortjourney.com/uploads/1748599850237.jpg",
     transmission: "Manual",
     fuelType: "Diesel",
     fuelEfficiency: "20/km",
@@ -110,7 +110,7 @@ export const vehicles = [
   {
     id: 6,
     name: "Toyota Fortuner",
-    image: "https://images.pexels.com/photos/3764984/pexels-photo-3764984.jpeg",
+    image: "https://thecomfortjourney.com/uploads/1745396679183.webp",
     transmission: "Manual",
     fuelType: "Petrol",
     fuelEfficiency: "12/km",
@@ -130,8 +130,8 @@ export const vehicles = [
   },
   {
     id: 7,
-    name: "Dzire New",
-    image: "https://images.pexels.com/photos/33238100/pexels-photo-33238100.jpeg",
+    name: "Dzire new",
+    image: "https://thecomfortjourney.com/uploads/1745403212043.jpeg",
     transmission: "Manual",
     fuelType: "CNG + Petrol",
     fuelEfficiency: "25/km",
@@ -151,8 +151,8 @@ export const vehicles = [
   },
   {
     id: 8,
-    name: "Swift Epic New",
-    image: "https://images.pexels.com/photos/33229798/pexels-photo-33229798.jpeg",
+    name: "Swift Epic new",
+    image: "https://thecomfortjourney.com/uploads/1748598091284.jpeg",
     transmission: "Manual",
     fuelType: "Petrol",
     fuelEfficiency: "20/km",
@@ -177,7 +177,7 @@ export const heroSlides = [
     id: 1,
     title: "Your Ride, Your Way",
     subtitle: "Book a car easily with just a few clicks – anytime, anywhere.",
-    image: "https://images.pexels.com/photos/1955134/pexels-photo-1955134.jpeg",
+    image: "https://thecomfortjourney.com/assets/hero1-wpjzULAj.webp",
     ctaText: "Book Now",
     overlay: "dark"
   },
@@ -206,7 +206,7 @@ export const specialOffers = [
     discount: "10% OFF",
     validUntil: "Limited Time",
     type: "limited",
-    image: "https://images.pexels.com/photos/3764984/pexels-photo-3764984.jpeg"
+    image: "https://thecomfortjourney.com/uploads/1746558034411.jpg"
   },
   {
     id: 2,
@@ -214,7 +214,7 @@ export const specialOffers = [
     discount: "15% OFF",
     validUntil: "This Weekend",
     type: "weekend",
-    image: "https://images.pexels.com/photos/33249918/pexels-photo-33249918.jpeg"
+    image: "https://thecomfortjourney.com/uploads/1747078938994.png"
   },
   {
     id: 3,
@@ -222,34 +222,31 @@ export const specialOffers = [
     discount: "20% OFF",
     validUntil: "First Booking",
     type: "new_user",
-    image: "https://images.pexels.com/photos/33238469/pexels-photo-33238469.jpeg"
+    image: "https://thecomfortjourney.com/uploads/1747079189075.jpeg"
   }
 ];
 
 export const testimonials = [
   {
     id: 1,
-    name: "Rahul Sharma",
-    location: "Mumbai",
+    name: "Alok mishra",
     rating: 5,
-    comment: "Excellent service! The car was in perfect condition and the booking process was seamless.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
+    comment: "Car was new and clean.",
+    date: "7/1/2025"
   },
   {
     id: 2,
-    name: "Priya Patel",
-    location: "Delhi",
+    name: "Somil jain",
     rating: 5,
-    comment: "Amazing experience with The Comfort Journey. Highly recommend for anyone looking for reliable car rentals.",
-    image: "https://images.unsplash.com/photo-1494790108755-2616b612b5b5?w=150&h=150&fit=crop&crop=face"
+    comment: "Ride was good ..go for it",
+    date: "7/1/2025"
   },
   {
     id: 3,
-    name: "Amit Kumar",
-    location: "Bangalore",
-    rating: 4,
-    comment: "Great cars and professional service. Will definitely book again for my next trip.",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
+    name: "Adarsh Thakur",
+    rating: 5,
+    comment: "Best.. and bestest self drive company..",
+    date: "7/1/2025"
   }
 ];
 
@@ -285,28 +282,13 @@ export const features = [
   }
 ];
 
-// Mock user for authentication testing
-export const mockUser = {
-  id: 1,
-  name: "John Doe",
-  email: "john@example.com",
-  phone: "+91 9876543210",
-  bookings: []
+// Contact information
+export const contactInfo = {
+  primaryPhone: "+91 90981 03725",
+  backupPhone: "+91 7225960702",
+  whatsapp: "919098103725",
+  instagram: "https://www.instagram.com/car2go_mp09?igsh=aTM3cXpyYjZ3azg3"
 };
-
-// Mock booking data
-export const mockBookings = [
-  {
-    id: 1,
-    vehicleId: 1,
-    userId: 1,
-    startDate: "2025-01-15",
-    endDate: "2025-01-17",
-    totalAmount: 10000,
-    status: "confirmed",
-    createdAt: "2025-01-10"
-  }
-];
 
 // Additional data for enhanced features
 export const carFeatures = [
@@ -323,21 +305,21 @@ export const popularDestinations = [
     id: 1,
     name: "Ujjain",
     distance: "55 km",
-    image: "https://images.pexels.com/photos/1955134/pexels-photo-1955134.jpeg",
+    image: "https://thecomfortjourney.com/uploads/1745410384060-UJJAIN.jpeg",
     description: "Ancient temple city"
   },
   {
     id: 2,
     name: "Omkareshwar",
     distance: "77 km", 
-    image: "https://images.pexels.com/photos/4339681/pexels-photo-4339681.jpeg",
+    image: "https://thecomfortjourney.com/uploads/1745410511771-omkareswar.jpeg",
     description: "Sacred Jyotirlinga temple"
   },
   {
     id: 3,
     name: "Maheshwar",
     distance: "91 km",
-    image: "https://images.pexels.com/photos/3369191/pexels-photo-3369191.jpeg",
+    image: "https://thecomfortjourney.com/uploads/1745410580876-maheswar.jpeg",
     description: "Historic fort city"
   }
 ];
