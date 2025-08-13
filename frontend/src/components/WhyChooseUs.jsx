@@ -20,13 +20,13 @@ const WhyChooseUs = ({ onBookNowClick }) => {
         <div className="max-w-4xl">
           <h2 className="text-4xl md:text-5xl font-bold mb-8">
             Why Choose{' '}
-            <span className="text-yellow-500">THE COMFORT JOURNEY</span>{' '}
+            <span className="text-yellow-500">CAR2GO</span>{' '}
             for Taxi Hires
           </h2>
           
           <div className="space-y-6 text-lg leading-relaxed">
             <p>
-              The Comfort Journey operates <strong>24/7</strong>, providing Airport, Railway, and Bus station pickup & drop services. We have a large fleet of cabs, equipped with all modern amenities, ensuring a <strong>safe and comfortable journey at an affordable price</strong>.
+              Car2go operates <strong>24/7</strong>, providing Airport, Railway, and Bus station pickup & drop services. We have a large fleet of cabs, equipped with all modern amenities, ensuring a <strong>safe and comfortable journey at an affordable price</strong>.
             </p>
             
             <p>
