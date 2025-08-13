@@ -1,53 +1,47 @@
 import React, { useState, useEffect } from 'react';
-import { Calendar, User, Clock, Tag, Search, Filter } from 'lucide-react';
+import { Calendar, User, Clock, Tag, Search, Filter, ArrowRight } from 'lucide-react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import { Badge } from './ui/badge';
 import Header from './Header';
 import Footer from './Footer';
+import { blogs } from '../data/mockData';
 
 const BlogsPage = () => {
-  const [blogs, setBlogs] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [filteredBlogs, setFilteredBlogs] = useState(blogs);
+  const [loading, setLoading] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
-  const [user, setUser] = useState(null);
 
-  // Mock blogs data
-  const mockBlogs = [
-    {
-      id: 1,
-      title: "Top 10 Road Trip Destinations Near Indore",
-      slug: "top-10-road-trip-destinations-near-indore",
-      excerpt: "Discover the most beautiful road trip destinations within driving distance from Indore. From spiritual sites to historical wonders, explore Madhya Pradesh like never before.",
-      featuredImage: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzZ8MHwxfHNlYXJjaHwxfHxyb2FkJTIwdHJpcHxlbnwwfHx8fDE3NTM4OTc1OTV8MA&ixlib=rb-4.1.0&q=85",
-      author: "Travel Team",
-      category: "Travel Guide",
-      tags: ["road trip", "indore", "madhya pradesh", "travel", "destinations"],
-      publishedAt: "2025-01-28",
-      readTime: "5 min read",
-      views: 1250
-    },
-    {
-      id: 2,
-      title: "Essential Car Rental Tips for First-Time Renters",
-      slug: "essential-car-rental-tips-first-time-renters",
-      excerpt: "New to car rentals? Learn essential tips and tricks to make your first car rental experience smooth and hassle-free.",
-      featuredImage: "https://images.unsplash.com/photo-1468818438311-4bab781ab9b8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzZ8MHwxfHNlYXJjaHwyfHxyb2FkJTIwdHJpcHxlbnwwfHx8fDE3NTM4OTc1OTV8MA&ixlib=rb-4.1.0&q=85",
-      author: "Customer Service Team",
-      category: "Car Rental Tips",
-      tags: ["car rental", "tips", "first time", "guide", "driving"],
-      publishedAt: "2025-01-25",
-      readTime: "4 min read",
-      views: 890
-    },
-    {
-      id: 3,
-      title: "Why Self-Drive Car Rentals are Perfect for Family Vacations",
-      slug: "self-drive-car-rentals-perfect-family-vacations",
-      excerpt: "Discover why self-drive car rentals are the perfect choice for family vacations, offering freedom, comfort, and unforgettable experiences.",
-      featuredImage: "https://images.pexels.com/photos/3369191/pexels-photo-3369191.jpeg",
+  // Get unique categories
+  const categories = ['all', ...new Set(blogs.map(blog => blog.category))];
+
+  // Filter blogs based on search and category
+  useEffect(() => {
+    let filtered = blogs;
+
+    if (searchQuery) {
+      filtered = filtered.filter(blog =>
+        blog.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        blog.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        blog.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()))
+      );
+    }
+
+    if (selectedCategory !== 'all') {
+      filtered = filtered.filter(blog => blog.category === selectedCategory);
+    }
+
+    setFilteredBlogs(filtered);
+  }, [searchQuery, selectedCategory]);
+
+  const handleBookNow = () => {
+    const phoneNumber = "919098103725";
+    const message = "Hello, I want to book a car from Car2go.";
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappURL, '_blank');
+  };
       author: "Family Travel Expert",
       category: "Family Travel",
       tags: ["family vacation", "self drive", "road trip", "family travel", "car rental"],
