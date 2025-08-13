@@ -7,7 +7,7 @@ import ImportantPoints from './ImportantPoints';
 const ServicesPage = () => {
   const handleBookNow = (vehicle = null) => {
     const phoneNumber = "919098103725";
-    let message = "Hello, I want to book a car from The Comfort Journey.";
+    let message = "Hello, I want to book a car from Car2go.";
     
     if (vehicle) {
       message = `Hello, I want to book ${vehicle.name} from The Comfort Journey.`;
