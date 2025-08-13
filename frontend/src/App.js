@@ -7,76 +7,46 @@ import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
 import SpecialOffers from "./components/SpecialOffers";
 import VehiclesCatalog from "./components/VehiclesCatalog";
-import LoginModal from "./components/LoginModal";
-import BookingModal from "./components/BookingModal";
 import Footer from "./components/Footer";
 import BlogsPage from "./components/BlogsPage";
 import ContactPage from "./components/ContactPage";
 import FAQsPage from "./components/FAQsPage";
 import AboutPage from "./components/AboutPage";
+import ServicesPage from "./components/ServicesPage";
+import ImportantPoints from "./components/ImportantPoints";
+import TravelBlogs from "./components/TravelBlogs";
+import WhyChooseUs from "./components/WhyChooseUs";
+import CustomerReviews from "./components/CustomerReviews";
+import FAQSection from "./components/FAQSection";
 import { Toaster } from "./components/ui/toaster";
 
 const Home = () => {
-  const [user, setUser] = useState(null);
-  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
-  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
-  const [selectedVehicle, setSelectedVehicle] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
 
-  const handleLogin = (userData) => {
-    setUser(userData);
-    // Store user data in localStorage for persistence
-    localStorage.setItem('user', JSON.stringify(userData));
-  };
-
-  const handleLogout = () => {
-    setUser(null);
-    localStorage.removeItem('user');
-  };
-
   const handleBookNow = (vehicle = null) => {
-    if (!user) {
-      setIsLoginModalOpen(true);
-      return;
-    }
+    const phoneNumber = "919098103725"; // Primary number
+    let message = "Hello, I want to book a car from The Comfort Journey.";
     
     if (vehicle) {
-      setSelectedVehicle(vehicle);
+      message = `Hello, I want to book ${vehicle.name} from The Comfort Journey.`;
     }
-    setIsBookingModalOpen(true);
+    
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappURL, '_blank');
   };
 
   const handleSearch = (query) => {
     setSearchQuery(query);
-    // Scroll to vehicles section
     const vehiclesSection = document.getElementById('vehicles-section');
     if (vehiclesSection) {
       vehiclesSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
-  // Check for stored user on component mount
-  React.useEffect(() => {
-    const storedUser = localStorage.getItem('user');
-    if (storedUser) {
-      try {
-        setUser(JSON.parse(storedUser));
-      } catch (error) {
-        console.error('Error parsing stored user data:', error);
-        localStorage.removeItem('user');
-      }
-    }
-  }, []);
-
   return (
     <div className="App">
       {/* Header */}
-      <Header
-        onLoginClick={() => setIsLoginModalOpen(true)}
-        onSearchClick={handleSearch}
-        user={user}
-        onLogout={handleLogout}
-      />
+      <Header onSearchClick={handleSearch} />
 
       {/* Hero Section */}
       <HeroSection onBookNowClick={handleBookNow} />
@@ -92,22 +62,23 @@ const Home = () => {
         />
       </div>
 
+      {/* Important Points */}
+      <ImportantPoints />
+
+      {/* Travel Blogs */}
+      <TravelBlogs />
+
+      {/* Why Choose Us */}
+      <WhyChooseUs onBookNowClick={handleBookNow} />
+
+      {/* Customer Reviews */}
+      <CustomerReviews />
+
+      {/* FAQ Section */}
+      <FAQSection />
+
       {/* Footer */}
       <Footer />
-
-      {/* Modals */}
-      <LoginModal
-        isOpen={isLoginModalOpen}
-        onClose={() => setIsLoginModalOpen(false)}
-        onLogin={handleLogin}
-      />
-
-      <BookingModal
-        isOpen={isBookingModalOpen}
-        onClose={() => setIsBookingModalOpen(false)}
-        vehicle={selectedVehicle}
-        user={user}
-      />
 
       {/* Toast Notifications */}
       <Toaster />
@@ -123,7 +94,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/services" element={<AboutPage />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/services/bookcar" element={<ServicesPage />} />
           <Route path="/faqs" element={<FAQsPage />} />
           <Route path="/blogs" element={<BlogsPage />} />
           <Route path="/contact" element={<ContactPage />} />
