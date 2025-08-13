@@ -25,10 +25,10 @@ const Home = () => {
 
   const handleBookNow = (vehicle = null) => {
     const phoneNumber = "919098103725"; // Primary number
-    let message = "Hello, I want to book a car from The Comfort Journey.";
+    let message = "Hello, I want to book a car from Car2go.";
     
     if (vehicle) {
-      message = `Hello, I want to book ${vehicle.name} from The Comfort Journey.`;
+      message = `Hello, I want to book ${vehicle.name} from Car2go.`;
     }
     
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;

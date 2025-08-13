@@ -17,7 +17,7 @@ const Header = ({ onSearchClick }) => {
 
   const handleBookNow = () => {
     const phoneNumber = "919098103725";
-    const message = "Hello, I want to book a car from The Comfort Journey.";
+    const message = "Hello, I want to book a car from Car2go.";
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappURL, '_blank');
   };
@@ -47,14 +47,14 @@ const Header = ({ onSearchClick }) => {
                 <div className="flex items-center space-x-2">
                   <img 
                     src="/src/assets/logo-1.jpg" 
-                    alt="The Comfort Journey" 
+                    alt="Car2go" 
                     className="w-10 h-10 rounded-full object-cover"
                     onError={(e) => {
-                      e.target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' fill='%232563eb'/%3E%3Ctext x='20' y='25' font-family='Arial' font-size='16' font-weight='bold' text-anchor='middle' fill='white'%3ETCJ%3C/text%3E%3C/svg%3E";
+                      e.target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' fill='%232563eb'/%3E%3Ctext x='20' y='25' font-family='Arial' font-size='16' font-weight='bold' text-anchor='middle' fill='white'%3EC2G%3C/text%3E%3C/svg%3E";
                     }}
                   />
                   <div className="hidden sm:block">
-                    <h1 className="text-xl font-bold text-gray-900">The Comfort Journey</h1>
+                    <h1 className="text-xl font-bold text-gray-900">Car2go</h1>
                   </div>
                 </div>
               </div>
