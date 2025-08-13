@@ -19,21 +19,21 @@ const SpecialOffers = () => {
         {/* Enhanced Scrolling Offers Container */}
         <div className="relative">
           <div 
-            className="flex transition-all duration-700 ease-in-out gap-6"
+            className="flex transition-all duration-700 ease-in-out gap-4"
             style={{ 
               transform: `translateX(-${currentSlide * (100 / specialOffers.length)}%)`,
               width: `${specialOffers.length * 100}%`
             }}
           >
-            {/* Main offers display */}
+            {/* Main offers display - Made 50% smaller */}
             {specialOffers.map((offer, index) => (
               <div
                 key={`main-${offer.id}`}
-                className="relative flex-shrink-0 rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 group cursor-pointer"
-                style={{ width: `${100 / specialOffers.length}%` }}
+                className="relative flex-shrink-0 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 group cursor-pointer"
+                style={{ width: `${100 / specialOffers.length}%`, maxWidth: '350px', height: '200px' }}
               >
                 {/* Background Image with Enhanced Overlay */}
-                <div className="relative h-48 sm:h-56 md:h-64">
+                <div className="relative h-full">
                   <img
                     src={offer.image}
                     alt={offer.title}
@@ -48,7 +48,7 @@ const SpecialOffers = () => {
                   
                   {/* Animated Sparkle Effect */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    {[...Array(8)].map((_, i) => (
+                    {[...Array(6)].map((_, i) => (
                       <div
                         key={i}
                         className="absolute w-1 h-1 bg-yellow-300 rounded-full animate-pulse"
@@ -66,39 +66,39 @@ const SpecialOffers = () => {
                 {/* Enhanced Content Overlay */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center text-white transform transition-transform duration-300 group-hover:scale-110">
-                    {/* Discount Badge */}
-                    <div className="inline-block bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-6 py-2 rounded-full text-2xl sm:text-3xl font-black mb-3 shadow-lg transform rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                    {/* Discount Badge - Made smaller */}
+                    <div className="inline-block bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-4 py-1.5 rounded-full text-lg sm:text-xl font-black mb-2 shadow-lg transform rotate-3 group-hover:rotate-0 transition-transform duration-300">
                       {offer.discount}
                     </div>
                     
-                    {/* Title */}
-                    <div className="text-lg sm:text-xl font-bold text-white drop-shadow-lg mb-2">
+                    {/* Title - Made smaller */}
+                    <div className="text-sm sm:text-base font-bold text-white drop-shadow-lg mb-1">
                       {offer.title}
                     </div>
                     
-                    {/* Validity */}
-                    <div className="text-sm text-yellow-200 font-medium">
+                    {/* Validity - Made smaller */}
+                    <div className="text-xs text-yellow-200 font-medium">
                       {offer.validUntil}
                     </div>
                     
-                    {/* Call to Action */}
-                    <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <span className="inline-block bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-semibold border border-white/30 hover:bg-white/30 transition-colors duration-200">
+                    {/* Call to Action - Made smaller */}
+                    <div className="mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <span className="inline-block bg-white/20 backdrop-blur-sm text-white px-3 py-1.5 rounded-full text-xs font-semibold border border-white/30 hover:bg-white/30 transition-colors duration-200">
                         Claim Now →
                       </span>
                     </div>
                   </div>
                 </div>
 
-                {/* Corner Decoration */}
-                <div className="absolute top-4 right-4 w-8 h-8 border-2 border-yellow-400 border-dashed rounded-full animate-spin-slow opacity-70"></div>
+                {/* Corner Decoration - Made smaller */}
+                <div className="absolute top-2 right-2 w-6 h-6 border-2 border-yellow-400 border-dashed rounded-full animate-spin-slow opacity-70"></div>
               </div>
             ))}
           </div>
         </div>
 
         {/* Enhanced Offer Indicators */}
-        <div className="flex justify-center mt-8 space-x-3">
+        <div className="flex justify-center mt-6 space-x-3">
           {specialOffers.map((_, index) => (
             <button
               key={index}

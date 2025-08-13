@@ -184,16 +184,16 @@ export const heroSlides = [
   {
     id: 2,
     title: "Explore Without Limits",
-    subtitle: "Travel in comfort and style across the city and beyond with premium vehicles.",
-    image: "https://images.pexels.com/photos/3369191/pexels-photo-3369191.jpeg",
+    subtitle: "Travel in comfort and style across scenic routes with premium vehicles.",
+    image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHw0fHxyb2FkJTIwdHJpcHxlbnwwfHx8fDE3NTUxMDk5NDZ8MA&ixlib=rb-4.1.0&q=85",
     ctaText: "Book Now",
     overlay: "gradient"
   },
   {
     id: 3,
     title: "Premium Travel Experience",
-    subtitle: "Experience luxury and comfort with our well-maintained fleet of vehicles.",
-    image: "https://images.pexels.com/photos/4339681/pexels-photo-4339681.jpeg",
+    subtitle: "Experience luxury and adventure with our well-maintained fleet of vehicles.",
+    image: "https://images.unsplash.com/photo-1529369623266-f5264b696110?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHw0fHxjYXIlMjByZW50YWx8ZW58MHx8fHwxNzU1MTA5OTQwfDA&ixlib=rb-4.1.0&q=85",
     ctaText: "Book Now",
     overlay: "dark"
   }
@@ -330,180 +330,355 @@ export const blogs = [
     id: 1,
     title: "Mahakaleswar -Ujjain",
     slug: "mahakaleswar-ujjain",
-    excerpt: "Ujjain is an ancient city beside the Kshipra River in the central Indian state of Madhya Pradesh. An important Hindu pil...",
+    excerpt: "Ujjain is an ancient city beside the Kshipra River in the central Indian state of Madhya Pradesh. An important Hindu pilgrimage destination known for sacred temples, spiritual experiences, holy ghats, traditional markets, cultural heritage, religious festivals, ancient architecture, and divine blessings.",
     content: `
-      <h1>Mahakaleswar -Ujjain</h1>
-      <p>Ujjain is an ancient city beside the Kshipra River in the central Indian state of Madhya Pradesh. An important Hindu pilgrimage destination, it's known for the sacred Kshipra River and the centuries-old Mahakaleshwar Temple, a revered shrine dedicated to Shiva.</p>
-      
-      <h2>About Mahakaleshwar Temple</h2>
-      <p>The Mahakaleshwar Jyotirlinga is one of the twelve Jyotirlingas, shrines which are said to be the most sacred abodes of Shiva. It is located in the ancient city of Ujjain in the state of Madhya Pradesh, India. The temple is situated on the side of the holy river Kshipra.</p>
-      
-      <h2>Visiting Ujjain</h2>
-      <p>Ujjain is easily accessible by road from Indore, making it a perfect destination for a spiritual journey. The city offers a rich cultural experience with its ancient temples, ghats, and traditional markets.</p>
-      
-      <h2>Best Time to Visit</h2>
-      <p>The best time to visit Ujjain is during the winter months from October to March when the weather is pleasant for sightseeing and religious activities.</p>
+      <div class="blog-content">
+        <img src="https://thecomfortjourney.com/uploads/1745410384060-UJJAIN.jpeg" alt="Mahakaleshwar Temple Ujjain" class="blog-hero-image" />
+        
+        <h1>Mahakaleswar Temple - Sacred Jyotirlinga of Ujjain</h1>
+        
+        <h2>🏛️ About Mahakaleshwar Temple</h2>
+        <p>The Mahakaleshwar Jyotirlinga is one of the twelve sacred Jyotirlingas, considered the most revered abodes of Lord Shiva. Located in the ancient city of Ujjain beside the holy Kshipra River, this temple holds immense spiritual significance for Hindu devotees worldwide.</p>
+        
+        <h2>✨ Key Attractions & Spiritual Experiences</h2>
+        <ul>
+          <li><strong>Bhasma Aarti:</strong> Witness the unique ritual performed with sacred ash at dawn</li>
+          <li><strong>Holy Kshipra River:</strong> Take a purifying dip in the sacred waters</li>
+          <li><strong>Kumbh Mela:</strong> Experience the world's largest religious gathering held every 12 years</li>
+          <li><strong>Ancient Architecture:</strong> Marvel at centuries-old temple design and intricate carvings</li>
+          <li><strong>Spiritual Markets:</strong> Explore traditional bazaars offering religious items and local crafts</li>
+        </ul>
+        
+        <h2>🚗 Best Way to Visit from Indore</h2>
+        <p>Ujjain is easily accessible from Indore (55 km drive), making it perfect for a spiritual road trip with Car2go. Enjoy comfortable self-drive cars for temple visits, sightseeing tours, pilgrimage journeys, and exploring nearby attractions at your own pace.</p>
+        
+        <h2>🌟 Travel Tips for Car2go Customers</h2>
+        <ul>
+          <li>Book early morning slots for peaceful temple visits</li>
+          <li>Carry water and snacks for the spiritual journey</li>
+          <li>Respect local customs and dress modestly</li>
+          <li>Plan overnight stays during festival seasons</li>
+          <li>Explore nearby temples and cultural sites</li>
+        </ul>
+        
+        <h2>📅 Best Time to Visit</h2>
+        <p>October to March offers pleasant weather for temple visits, spiritual tours, cultural exploration, photography, and comfortable car journeys. Avoid monsoon season for better road conditions.</p>
+      </div>
     `,
     image: "https://thecomfortjourney.com/uploads/1745410384060-UJJAIN.jpeg",
     date: "23 Apr 2025",
     author: "Car2go Team",
     category: "Spiritual Destinations",
-    tags: ["Ujjain", "Mahakaleshwar", "Temple", "Spiritual", "Madhya Pradesh"]
+    tags: ["Ujjain", "Mahakaleshwar", "Temple", "Spiritual", "Madhya Pradesh", "pilgrimage", "jyotirlinga", "sacred", "kshipra river"]
   },
   {
     id: 2,
     title: "SANWARIYA SETH",
     slug: "sanwariya-seth",
-    excerpt: "Dark lord krishna is also known as Sanwaria Seth, we believe that all their desires are fulfilled when they visit Shri...",
+    excerpt: "Dark lord Krishna is also known as Sanwariya Seth, believed to fulfill all desires when devotees visit this sacred temple. Located in Chittorgarh district of Rajasthan, this holy shrine attracts thousands seeking blessings, prosperity, wealth, spiritual fulfillment, and divine grace.",
     content: `
-      <h1>SANWARIYA SETH</h1>
-      <p>Dark lord Krishna is also known as Sanwariya Seth, we believe that all their desires are fulfilled when they visit Shri Sanwariya Seth temple. This temple is located in Chittorgarh district of Rajasthan.</p>
-      
-      <h2>The Legend</h2>
-      <p>Sanwariya Seth is considered to be the deity of wealth and prosperity. Devotees from across the country visit this temple to seek blessings for financial prosperity and fulfillment of their wishes.</p>
-      
-      <h2>Temple Architecture</h2>
-      <p>The temple showcases beautiful Rajasthani architecture with intricate carvings and stunning artwork. The deity is adorned with rich clothing and jewelry, creating a magnificent sight for devotees.</p>
-      
-      <h2>How to Reach</h2>
-      <p>The temple is easily accessible by road from major cities in Rajasthan and neighboring states. Car2go offers comfortable vehicle rentals for your spiritual journey.</p>
+      <div class="blog-content">
+        <img src="https://thecomfortjourney.com/uploads/1745410289184-SANWARIYA%20SETH.jpg" alt="Sanwariya Seth Temple" class="blog-hero-image" />
+        
+        <h1>Sanwariya Seth - The Divine Deity of Prosperity</h1>
+        
+        <h2>🙏 The Sacred Legend</h2>
+        <p>Lord Krishna, revered as Sanwariya Seth, is considered the divine deity of wealth, prosperity, and wish fulfillment. Devotees from across India visit this temple believing that all their heartfelt desires and prayers are granted by the benevolent deity.</p>
+        
+        <h2>🏛️ Temple Architecture & Sacred Features</h2>
+        <ul>
+          <li><strong>Rajasthani Architecture:</strong> Beautiful traditional design with intricate stone carvings</li>
+          <li><strong>Divine Idol:</strong> The deity adorned with rich clothing, jewelry, and flowers</li>
+          <li><strong>Prayer Halls:</strong> Spacious areas for devotional singing and meditation</li>
+          <li><strong>Sacred Courtyard:</strong> Open spaces for large gatherings and festivals</li>
+          <li><strong>Prasad Distribution:</strong> Blessed offerings for spiritual nourishment</li>
+        </ul>
+        
+        <h2>✨ Spiritual Benefits & Blessings</h2>
+        <p>Devotees visit Sanwariya Seth temple seeking financial prosperity, business success, good health, family harmony, education achievements, marriage blessings, and overall spiritual well-being. The deity is particularly known for helping devotees overcome financial difficulties.</p>
+        
+        <h2>🚗 Journey from Indore with Car2go</h2>
+        <p>Plan a comfortable road trip to Rajasthan with Car2go's reliable self-drive cars. The temple is accessible via well-maintained highways, offering scenic views of Rajasthani landscape, traditional villages, historic monuments, and cultural landmarks along the route.</p>
+        
+        <h2>🎉 Festivals & Special Occasions</h2>
+        <ul>
+          <li>Janmashtami celebrations with grand decorations</li>
+          <li>Diwali festivities with special prayers and lighting</li>
+          <li>Monthly full moon rituals and special aartis</li>
+          <li>Annual temple fairs with cultural programs</li>
+          <li>Daily prayer sessions and devotional singing</li>
+        </ul>
+        
+        <h2>💡 Travel Tips for Devotees</h2>
+        <p>Book accommodations in advance during festival seasons, carry sufficient cash for donations and prasad, dress in traditional attire, respect temple customs, and plan sufficient time for darshan and prayers.</p>
+      </div>
     `,
     image: "https://thecomfortjourney.com/uploads/1745410289184-SANWARIYA%20SETH.jpg",
     date: "23 Apr 2025",
     author: "Car2go Team",
     category: "Spiritual Destinations",
-    tags: ["Sanwariya Seth", "Krishna", "Rajasthan", "Temple", "Spiritual"]
+    tags: ["Sanwariya Seth", "Krishna", "Rajasthan", "Temple", "Spiritual", "prosperity", "wealth", "blessings", "chittorgarh"]
   },
   {
     id: 3,
     title: "Omkareshwar",
     slug: "omkareshwar",
-    excerpt: "Omkareshwar Jyotirlinga is one of the 12 Jyotirlinga temples dedicated to Lord Shiva. Omkareshwar is a sacred Hindu pil...",
+    excerpt: "Omkareshwar Jyotirlinga is one of the 12 sacred Jyotirlinga temples dedicated to Lord Shiva. This holy pilgrimage site in Khandwa district offers spiritual experiences, temple visits, river boating, cultural exploration, religious ceremonies, and peaceful meditation opportunities.",
     content: `
-      <h1>Omkareshwar</h1>
-      <p>Omkareshwar Jyotirlinga is one of the 12 Jyotirlinga temples dedicated to Lord Shiva. Omkareshwar is a sacred Hindu pilgrimage site in the Khandwa district of Madhya Pradesh, India.</p>
-      
-      <h2>The Sacred Island</h2>
-      <p>Omkareshwar is located on an island called Mandhata or Shivapuri in the Narmada river. The shape of the island is said to resemble the Hindu symbol 'Om', hence the name Omkareshwar.</p>
-      
-      <h2>Two Main Temples</h2>
-      <p>There are two main temples here - Omkareshwar (on the south of the river on the island) and Amareshwar or Mamleshwar (on the north of river on the mainland). Both are considered sacred Jyotirlingas.</p>
-      
-      <h2>Spiritual Significance</h2>
-      <p>The temple has immense spiritual significance and attracts thousands of devotees throughout the year. The peaceful atmosphere and sacred Narmada river create a perfect environment for meditation and prayer.</p>
-      
-      <h2>Getting There</h2>
-      <p>Omkareshwar is approximately 77 km from Indore and can be easily reached by road. The journey offers scenic views of the Narmada valley and surrounding hills.</p>
+      <div class="blog-content">
+        <img src="https://thecomfortjourney.com/uploads/1745410511771-omkareswar.jpeg" alt="Omkareshwar Jyotirlinga Temple" class="blog-hero-image" />
+        
+        <h1>Omkareshwar - Sacred Island of Lord Shiva</h1>
+        
+        <h2>🏝️ The Sacred Om-Shaped Island</h2>
+        <p>Omkareshwar is uniquely located on Mandhata island in the holy Narmada River. The island's natural shape resembles the sacred Hindu symbol 'Om', giving this spiritual destination its divine name and significance among devotees worldwide.</p>
+        
+        <h2>⛩️ Two Main Sacred Temples</h2>
+        <ul>
+          <li><strong>Omkareshwar Temple:</strong> Located on the southern part of the island with river views</li>
+          <li><strong>Amareshwar (Mamleshwar) Temple:</strong> Situated on the mainland across the river</li>
+          <li><strong>Both Jyotirlingas:</strong> Equally sacred and significant for Hindu pilgrims</li>
+          <li><strong>Temple Complex:</strong> Multiple shrines and meditation halls</li>
+          <li><strong>Ghat Areas:</strong> Sacred steps leading to the holy Narmada waters</li>
+        </ul>
+        
+        <h2>🌊 Spiritual Activities & Experiences</h2>
+        <p>Devotees enjoy temple darshan, holy river baths, boat rides on Narmada, meditation sessions, spiritual discourses, cultural programs, local handicraft shopping, and peaceful walks along the sacred ghats.</p>
+        
+        <h2>🚗 Road Trip from Indore (77 km)</h2>
+        <p>Experience a scenic drive through Narmada valley with Car2go's comfortable vehicles. The journey offers beautiful landscapes, rural villages, river crossings, hill views, and opportunities for photography and sightseeing stops.</p>
+        
+        <h2>🎯 Must-Visit Attractions</h2>
+        <ul>
+          <li>Jyotirlinga temple complex with ancient architecture</li>
+          <li>Narmada river boat rides and sunset views</li>
+          <li>Siddhanath Temple with panoramic valley views</li>
+          <li>Local markets selling religious items and crafts</li>
+          <li>Peaceful meditation spots along the riverbank</li>
+        </ul>
+        
+        <h2>📝 Pilgrimage Planning Tips</h2>
+        <p>Plan 2-3 days for complete spiritual experience, stay in temple guesthouses or nearby hotels, carry comfortable walking shoes, respect temple dress codes, and book Car2go vehicles in advance for convenient transportation.</p>
+        
+        <h2>🌅 Best Times for Visit</h2>
+        <p>Winter months (October-March) offer comfortable weather for temple visits, river activities, outdoor exploration, and long drives. Kartik Purnima and Mahashivratri are especially auspicious times for pilgrimage.</p>
+      </div>
     `,
     image: "https://thecomfortjourney.com/uploads/1745410511771-omkareswar.jpeg",
     date: "22 Apr 2025",
     author: "Car2go Team",
     category: "Spiritual Destinations",
-    tags: ["Omkareshwar", "Jyotirlinga", "Shiva", "Narmada", "Madhya Pradesh"]
+    tags: ["Omkareshwar", "Jyotirlinga", "Shiva", "Narmada", "Madhya Pradesh", "pilgrimage", "temple", "sacred", "island"]
   },
   {
     id: 4,
     title: "Maheshwar",
     slug: "maheshwar",
-    excerpt: "Maheshwar is a town, near Khargone city in Khargone district of Madhya Pradesh state, in central India. It is located on...",
+    excerpt: "Maheshwar is a historic town near Khargone in Madhya Pradesh, located on the banks of river Narmada. Famous for Ahilyabai Holkar's legacy, handwoven Maheshwari sarees, fort architecture, river ghats, cultural heritage, traditional crafts, and scenic beauty.",
     content: `
-      <h1>Maheshwar</h1>
-      <p>Maheshwar is a town, near Khargone city in Khargone district of Madhya Pradesh state, in central India. It is located on the north bank of the Narmada River.</p>
-      
-      <h2>Historical Significance</h2>
-      <p>Maheshwar was the capital of the great Maratha queen Ahilyabai Holkar. She built numerous temples and established the town as an important pilgrimage and commercial center.</p>
-      
-      <h2>Maheshwar Fort</h2>
-      <p>The fort complex houses several temples and a museum. The architecture reflects the grandeur of the Holkar dynasty and offers stunning views of the Narmada River.</p>
-      
-      <h2>Maheshwari Sarees</h2>
-      <p>Maheshwar is famous for its handwoven Maheshwari sarees and fabrics. The town has several weaving centers where you can witness the traditional art of handloom weaving.</p>
-      
-      <h2>River Ghats</h2>
-      <p>The ghats of Maheshwar along the Narmada River are particularly beautiful during sunset. Evening boat rides offer a peaceful experience and great photography opportunities.</p>
+      <div class="blog-content">
+        <img src="https://thecomfortjourney.com/uploads/1745410580876-maheswar.jpeg" alt="Maheshwar Fort and Ghats" class="blog-hero-image" />
+        
+        <h1>Maheshwar - Royal Heritage City on Narmada</h1>
+        
+        <h2>👑 Historical Significance & Royal Legacy</h2>
+        <p>Maheshwar served as the capital of the great Maratha queen Ahilyabai Holkar, who transformed it into an important pilgrimage center, commercial hub, and cultural destination. Her visionary leadership created numerous temples, ghats, and public facilities that continue to attract visitors today.</p>
+        
+        <h2>🏰 Maheshwar Fort Complex</h2>
+        <ul>
+          <li><strong>Royal Palace:</strong> Historic residence showcasing Holkar dynasty grandeur</li>
+          <li><strong>Museum Collections:</strong> Ancient artifacts, paintings, and royal memorabilia</li>
+          <li><strong>Temple Complex:</strong> Multiple shrines within the fort premises</li>
+          <li><strong>River Views:</strong> Stunning panoramic views of Narmada River</li>
+          <li><strong>Architecture:</strong> Beautiful blend of Maratha and Mughal architectural styles</li>
+        </ul>
+        
+        <h2>🧵 Famous Maheshwari Handloom Industry</h2>
+        <p>Maheshwar is renowned worldwide for exquisite Maheshwari sarees and fabrics. Visit traditional weaving centers, witness skilled artisans at work, learn about ancient techniques, shop authentic handloom products, and support local craftspeople preserving this cultural heritage.</p>
+        
+        <h2>🌊 Scenic Narmada River Ghats</h2>
+        <p>The ghats of Maheshwar offer breathtaking sunset views, peaceful boat rides, religious ceremonies, cultural photography opportunities, meditation spots, and serene riverside walks. Evening aarti ceremonies create magical spiritual atmosphere.</p>
+        
+        <h2>🚗 Perfect Road Trip Destination (91 km from Indore)</h2>
+        <p>Enjoy comfortable drive to Maheshwar with Car2go's reliable vehicles. The route offers scenic countryside views, traditional villages, agricultural landscapes, river crossings, and opportunities for stops at local attractions and eateries.</p>
+        
+        <h2>🎨 Cultural Experiences & Activities</h2>
+        <ul>
+          <li>Fort exploration and historical tours</li>
+          <li>Handloom shopping and artisan interactions</li>
+          <li>River boat rides and sunset photography</li>
+          <li>Traditional food experiences and local cuisine</li>
+          <li>Temple visits and spiritual activities</li>
+        </ul>
+        
+        <h2>📸 Photography & Sightseeing Tips</h2>
+        <p>Best lighting for photography during golden hours, capture fort architecture details, document weaving processes, shoot river ghat scenes, and respect local customs while photographing people and religious ceremonies.</p>
+      </div>
     `,
     image: "https://thecomfortjourney.com/uploads/1745410580876-maheswar.jpeg",
     date: "22 Apr 2025",
     author: "Car2go Team",
     category: "Historical Places",
-    tags: ["Maheshwar", "Ahilyabai Holkar", "Narmada", "Fort", "Madhya Pradesh"]
+    tags: ["Maheshwar", "Ahilyabai Holkar", "Narmada", "Fort", "Madhya Pradesh", "heritage", "sarees", "handloom", "culture"]
   },
   {
     id: 5,
     title: "Jam Gate",
     slug: "jam-gate",
-    excerpt: "The Jam Gate is a picnic spot in Maheshwar Tehsil of Khargone District in the state of Madhya Pradesh, India. It is on M...",
+    excerpt: "Jam Gate is a scenic picnic spot in Maheshwar Tehsil of Khargone District, Madhya Pradesh. Perfect for nature lovers, family outings, photography, bird watching, peaceful retreats, outdoor activities, scenic beauty, and refreshing getaways from city life.",
     content: `
-      <h1>Jam Gate</h1>
-      <p>The Jam Gate is a picnic spot in Maheshwar Tehsil of Khargone District in the state of Madhya Pradesh, India. It is on the Maheshwar-Barwah road and is famous for its natural beauty and serene environment.</p>
-      
-      <h2>Natural Beauty</h2>
-      <p>Jam Gate is known for its lush green surroundings and peaceful atmosphere. The spot is perfect for family picnics and nature photography.</p>
-      
-      <h2>Activities</h2>
-      <p>Visitors can enjoy various activities like nature walks, bird watching, and photography. The area is ideal for those seeking a quiet retreat from city life.</p>
-      
-      <h2>Best Time to Visit</h2>
-      <p>The best time to visit Jam Gate is during the monsoon and winter months when the natural beauty is at its peak and the weather is pleasant.</p>
+      <div class="blog-content">
+        <img src="https://thecomfortjourney.com/uploads/1745410694073-jaamgate.webp" alt="Jam Gate Natural Beauty" class="blog-hero-image" />
+        
+        <h1>Jam Gate - Nature's Perfect Picnic Paradise</h1>
+        
+        <h2>🌿 Natural Beauty & Scenic Landscapes</h2>
+        <p>Jam Gate offers pristine natural beauty with lush green surroundings, peaceful atmosphere, fresh air, scenic viewpoints, wildlife spotting opportunities, and serene environment perfect for relaxation, meditation, and connecting with nature away from urban chaos.</p>
+        
+        <h2>👨‍👩‍👧‍👦 Perfect Family Picnic Destination</h2>
+        <ul>
+          <li><strong>Spacious Areas:</strong> Ample space for family gatherings and group activities</li>
+          <li><strong>Natural Shade:</strong> Trees providing comfortable seating areas</li>
+          <li><strong>Safe Environment:</strong> Secure location suitable for children and elderly</li>
+          <li><strong>Scenic Beauty:</strong> Instagram-worthy landscapes for family photos</li>
+          <li><strong>Peaceful Atmosphere:</strong> Quiet retreat for quality family time</li>
+        </ul>
+        
+        <h2>📸 Photography & Nature Activities</h2>
+        <p>Jam Gate provides excellent opportunities for nature photography, landscape shots, wildlife photography, bird watching, nature walks, outdoor sketching, sunrise/sunset captures, and documenting local flora and fauna in their natural habitat.</p>
+        
+        <h2>🚗 Easy Access with Car2go (from Indore)</h2>
+        <p>Reach Jam Gate comfortably via Maheshwar-Barwah road with Car2go's reliable self-drive cars. The journey offers rural landscapes, traditional villages, agricultural fields, and opportunities for roadside attractions and local interactions.</p>
+        
+        <h2>🎯 Activities & Experiences</h2>
+        <ul>
+          <li>Nature walks and hiking trails</li>
+          <li>Bird watching and wildlife observation</li>
+          <li>Photography workshops and sessions</li>
+          <li>Outdoor games and recreational activities</li>
+          <li>Meditation and yoga sessions</li>
+          <li>Picnic lunches and outdoor dining</li>
+        </ul>
+        
+        <h2>🌦️ Best Seasons for Visit</h2>
+        <p>Monsoon season (July-September) transforms Jam Gate into a green paradise with flowing streams and lush vegetation. Winter months (October-February) offer pleasant weather perfect for outdoor activities, picnics, and extended stays.</p>
+        
+        <h2>💡 Travel & Safety Tips</h2>
+        <p>Carry sufficient water and snacks, wear comfortable clothing and footwear, respect natural environment, avoid littering, inform family about travel plans, carry first aid kit, and book Car2go vehicles for safe and convenient transportation.</p>
+      </div>
     `,
     image: "https://thecomfortjourney.com/uploads/1745410694073-jaamgate.webp",
     date: "22 Apr 2025",
     author: "Car2go Team",
     category: "Nature Spots",
-    tags: ["Jam Gate", "Picnic", "Nature", "Madhya Pradesh", "Photography"]
+    tags: ["Jam Gate", "Picnic", "Nature", "Madhya Pradesh", "Photography", "family", "outdoor", "scenic", "retreat"]
   },
   {
     id: 6,
     title: "Bhopal",
     slug: "bhopal",
-    excerpt: "Bhopal is a city in the central Indian state of Madhya Pradesh. It's one of India's greenest cities. There are two main...",
+    excerpt: "Bhopal, the capital city of Madhya Pradesh, is known as the 'City of Lakes' for its numerous water bodies. Experience rich history, modern infrastructure, cultural heritage, museums, lakes, architectural marvels, educational institutions, and diverse culinary experiences.",
     content: `
-      <h1>Bhopal - The City of Lakes</h1>
-      <p>Bhopal is a city in the central Indian state of Madhya Pradesh. It's one of India's greenest cities. There are two main areas: the historic Old City with its mosques and bustling markets, and New Bhopal with modern high-rises and shopping centers.</p>
-      
-      <h2>Upper and Lower Lakes</h2>
-      <p>Bhopal is known as the "City of Lakes" due to its numerous natural and artificial lakes. The Upper Lake (Bhojtal) and Lower Lake are the most prominent water bodies that enhance the city's beauty.</p>
-      
-      <h2>Historical Attractions</h2>
-      <p>The city boasts several historical monuments including the Taj-ul-Masajid, one of the largest mosques in India, and the Bhimbetka rock shelters, a UNESCO World Heritage Site.</p>
-      
-      <h2>Modern Bhopal</h2>
-      <p>New Bhopal features modern infrastructure, shopping malls, restaurants, and educational institutions. The city successfully blends tradition with modernity.</p>
-      
-      <h2>Cultural Hub</h2>
-      <p>Bhopal is also known for its rich cultural heritage, art galleries, museums, and vibrant festivals that showcase the diverse culture of Madhya Pradesh.</p>
+      <div class="blog-content">
+        <img src="https://thecomfortjourney.com/uploads/1745410808424-bhopal.jpeg" alt="Bhopal City of Lakes" class="blog-hero-image" />
+        
+        <h1>Bhopal - The Magnificent City of Lakes</h1>
+        
+        <h2>🏞️ Beautiful Lakes & Water Bodies</h2>
+        <p>Bhopal is renowned as the 'City of Lakes' featuring the spectacular Upper Lake (Bhojtal) and Lower Lake. These pristine water bodies offer boating activities, sunset views, lakefront dining, water sports, fishing opportunities, and peaceful evening walks along well-maintained promenades.</p>
+        
+        <h2>🏛️ Historical Monuments & Architecture</h2>
+        <ul>
+          <li><strong>Taj-ul-Masajid:</strong> One of India's largest mosques with stunning architecture</li>
+          <li><strong>Bhimbetka Caves:</strong> UNESCO World Heritage Site with ancient rock paintings</li>
+          <li><strong>Shaukat Mahal:</strong> Beautiful Indo-Islamic architecture masterpiece</li>
+          <li><strong>Gohar Mahal:</strong> Historic palace showcasing Mughal architectural style</li>
+          <li><strong>Moti Masjid:</strong> Elegant mosque known for its white marble construction</li>
+        </ul>
+        
+        <h2>🏙️ Modern Bhopal & Urban Attractions</h2>
+        <p>New Bhopal features contemporary infrastructure, shopping malls, multiplexes, restaurants, cafes, business districts, educational institutions, IT parks, and recreational centers offering modern amenities and urban lifestyle experiences.</p>
+        
+        <h2>🎨 Cultural Heritage & Arts</h2>
+        <p>Explore Bhopal's rich cultural scene through art galleries, museums, cultural centers, theaters, music venues, dance performances, literary events, handicraft exhibitions, and traditional festivals celebrating local and regional art forms.</p>
+        
+        <h2>🚗 Exploring Bhopal with Car2go (150 km from Indore)</h2>
+        <p>Discover Bhopal's attractions comfortably with Car2go's premium vehicles. Navigate easily between Old City's narrow lanes, New Bhopal's wide roads, lakefront areas, museums, shopping districts, and nearby attractions at your own pace.</p>
+        
+        <h2>🍽️ Culinary Delights & Local Cuisine</h2>
+        <ul>
+          <li>Famous street food at Chatori Gali and New Market</li>
+          <li>Traditional Bhopali biryanis and kebabs</li>
+          <li>Lakefront restaurants with scenic dining</li>
+          <li>Modern cafes and international cuisine</li>
+          <li>Local sweets and traditional desserts</li>
+        </ul>
+        
+        <h2>🛍️ Shopping & Entertainment</h2>
+        <p>Shop at DB City Mall, MP Nagar markets, Chowk Bazaar for traditional items, modern shopping centers, local handicrafts, textiles, jewelry, and souvenirs. Enjoy entertainment at multiplexes, amusement parks, and cultural venues.</p>
+        
+        <h2>🏨 Accommodation & Travel Tips</h2>
+        <p>Bhopal offers accommodation options from budget hotels to luxury resorts. Plan 2-3 days for comprehensive sightseeing, use Car2go for convenient city exploration, respect local customs, and try authentic Bhopali cuisine during your visit.</p>
+      </div>
     `,
     image: "https://thecomfortjourney.com/uploads/1745410808424-bhopal.jpeg",
     date: "22 Apr 2025",
     author: "Car2go Team",
     category: "Cities",
-    tags: ["Bhopal", "Lakes", "Capital", "Madhya Pradesh", "Heritage"]
+    tags: ["Bhopal", "Lakes", "Capital", "Madhya Pradesh", "Heritage", "culture", "tourism", "bhojtal", "architecture"]
   },
   {
     id: 7,
     title: "Rajwada – Historicity And More",
     slug: "rajwada-historicity-and-more",
-    excerpt: "This seven-storeyed historic attraction is the royal residence of Holkar dynasty, built in 1747 AD by the founder of Hol...",
+    excerpt: "Rajwada is a magnificent seven-storeyed historic palace, the royal residence of Holkar dynasty built in 1747 AD. Experience royal architecture, cultural heritage, museum exhibits, light shows, traditional crafts, historical significance, and Indore's regal past.",
     content: `
-      <h1>Rajwada – Historicity And More</h1>
-      <p>This seven-storeyed historic attraction is the royal residence of Holkar dynasty, built in 1747 AD by the founder of Holkar Dynasty, Malhar Rao Holkar.</p>
-      
-      <h2>Architectural Marvel</h2>
-      <p>Rajwada is a perfect blend of Maratha, Mughal and French architectural styles. The palace showcases the grandeur and magnificence of the Holkar rulers.</p>
-      
-      <h2>Historical Significance</h2>
-      <p>The palace served as the seat of the Holkar rulers for over 200 years. It witnessed many important historical events and political decisions that shaped the region's history.</p>
-      
-      <h2>Current Status</h2>
-      <p>Today, Rajwada stands as a museum and cultural center. It houses various artifacts, paintings, and historical items that tell the story of the Holkar dynasty.</p>
-      
-      <h2>Visiting Experience</h2>
-      <p>Visitors can explore the various floors of the palace, each showcasing different aspects of royal life. The evening light and sound show is particularly popular among tourists.</p>
+      <div class="blog-content">
+        <img src="https://thecomfortjourney.com/uploads/1745307994990-rajwada_cover_1_700x367.webp" alt="Rajwada Palace Indore" class="blog-hero-image" />
+        
+        <h1>Rajwada Palace - Crown Jewel of Holkar Dynasty</h1>
+        
+        <h2>👑 Royal Heritage & Historical Significance</h2>
+        <p>Built in 1747 AD by Malhar Rao Holkar, founder of the illustrious Holkar Dynasty, Rajwada Palace served as the royal residence and administrative center for over 200 years. This magnificent seven-storeyed structure witnessed crucial historical events that shaped central India's political landscape.</p>
+        
+        <h2>🏛️ Architectural Marvel & Design Elements</h2>
+        <ul>
+          <li><strong>Multi-Cultural Architecture:</strong> Perfect fusion of Maratha, Mughal, and French architectural styles</li>
+          <li><strong>Seven-Storey Structure:</strong> Each floor showcasing different aspects of royal lifestyle</li>
+          <li><strong>Intricate Carvings:</strong> Detailed stonework and decorative elements throughout</li>
+          <li><strong>Royal Balconies:</strong> Ornate balconies overlooking the bustling markets below</li>
+          <li><strong>Grand Entrance:</strong> Imposing doorway reflecting royal grandeur and power</li>
+        </ul>
+        
+        <h2>🏛️ Museum & Cultural Center Experience</h2>
+        <p>Today's Rajwada functions as a fascinating museum and cultural center displaying royal artifacts, historical paintings, ancient weapons, royal costumes, manuscripts, coins, and precious items that narrate the glorious Holkar legacy and Indore's rich cultural heritage.</p>
+        
+        <h2>🎭 Light & Sound Show Spectacular</h2>
+        <p>Experience the captivating evening light and sound show that brings Rajwada's history to life. Professional narration, stunning visual effects, historical storytelling, and dramatic lighting create an unforgettable journey through centuries of royal heritage and cultural evolution.</p>
+        
+        <h2>🚗 Central Location & Easy Access with Car2go</h2>
+        <p>Located in the heart of Indore city, Rajwada is easily accessible with Car2go vehicles. Explore nearby attractions like Sarafa Bazaar, Khajuri Bazaar, Kanch Mandir, and other historical sites. Convenient parking facilities make your visit hassle-free and enjoyable.</p>
+        
+        <h2>🛍️ Cultural Shopping & Local Experiences</h2>
+        <ul>
+          <li>Traditional handicrafts and royal replicas</li>
+          <li>Local textiles and embroidered fabrics</li>
+          <li>Miniature palace models and souvenirs</li>
+          <li>Historical books and cultural literature</li>
+          <li>Traditional jewelry and ornamental items</li>
+        </ul>
+        
+        <h2>📅 Best Times to Visit & Travel Tips</h2>
+        <p>Visit during cooler months (October-March) for comfortable exploration. Evening visits offer the spectacular light show experience. Allow 2-3 hours for complete tour including museum, architecture appreciation, and cultural performances. Book Car2go for convenient city touring.</p>
+        
+        <h2>🎯 Photography & Cultural Guidelines</h2>
+        <p>Photography allowed in designated areas, respect museum guidelines, maintain silence in cultural zones, dress modestly for palace visit, hire local guides for detailed historical insights, and preserve the heritage site's sanctity for future generations.</p>
+      </div>
     `,
     image: "https://thecomfortjourney.com/uploads/1745307994990-rajwada_cover_1_700x367.webp",
     date: "22 Apr 2025",
     author: "Car2go Team",
     category: "Historical Places",
-    tags: ["Rajwada", "Holkar", "Palace", "Indore", "Architecture"]
+    tags: ["Rajwada", "Holkar", "Palace", "Indore", "Architecture", "heritage", "museum", "culture", "history"]
   }
 ];
