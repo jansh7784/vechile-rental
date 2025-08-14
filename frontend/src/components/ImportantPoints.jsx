@@ -36,7 +36,7 @@ const ImportantPoints = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Important Points to Book a Car
             <br />
-            <span className="text-blue-600">with The Comfort Journey</span>
+            <span className="text-blue-600">with Car2go</span>
           </h2>
         </div>
 
