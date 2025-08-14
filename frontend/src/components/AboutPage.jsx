@@ -4,6 +4,7 @@ import { Button } from './ui/button';
 import { Badge } from './ui/badge';
 import Header from './Header';
 import Footer from './Footer';
+import { aboutPageTestimonials } from '../data/mockData';
 
 const AboutPage = () => {
   const [user, setUser] = useState(null);
