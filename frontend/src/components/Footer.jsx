@@ -24,7 +24,7 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <img 
-                src="/src/assets/logo-1.jpg" 
+                src="/assets/logo-1.jpg" 
                 alt="The Comfort Journey" 
                 className="w-10 h-10 rounded-full object-cover"
                 onError={(e) => {
