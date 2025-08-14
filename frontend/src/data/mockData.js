@@ -110,7 +110,7 @@ export const vehicles = [
   {
     id: 6,
     name: "Toyota Fortuner",
-    image: "https://thecomfortjourney.com/uploads/1745396679183.webp",
+    image: "/assets/Toyota Fortuner.webp",
     transmission: "Manual",
     fuelType: "Diesel",
     fuelEfficiency: "12/km",
