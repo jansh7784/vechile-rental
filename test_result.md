@@ -254,7 +254,7 @@ test_plan:
 
 agent_communication:
   - agent: "main"
-    message: "Ready to start comprehensive backend testing for The Comfort Journey car rental system. All endpoints need testing including health check, authentication, vehicle management, content management, bookings, and database connectivity. Backend URL: https://selfdrive-fleet.preview.emergentagent.com/api"
+    message: "Ready to start comprehensive backend testing for The Comfort Journey car rental system. All endpoints need testing including health check, authentication, vehicle management, content management, bookings, and database connectivity. Backend URL: https://car2go-fixes.preview.emergentagent.com/api"
   - agent: "testing"
     message: "✅ COMPREHENSIVE BACKEND TESTING COMPLETED SUCCESSFULLY! All 21 tests passed across 6 major categories. Key findings: (1) Health check and database connectivity excellent - MongoDB connected with seeded data, (2) Authentication system fully functional with JWT tokens, (3) Vehicle management API working with 6 vehicles, filtering, pagination, (4) Content management serving 3 blogs, 8 FAQs, 6 testimonials, contact form working, (5) Booking system operational with authentication, (6) Error handling proper for invalid requests. Minor fix applied for booking endpoint trailing slash redirect issue. Backend is production-ready."
   - agent: "testing"
