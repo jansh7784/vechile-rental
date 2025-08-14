@@ -175,7 +175,7 @@ class ComfortJourneyAPITester:
         print("\n🚗 Testing Vehicle Management...")
         
         # Test get all vehicles - should now have 16 vehicles
-        result = self.make_request("GET", "/api/vehicles")
+        result = self.make_request("GET", "/api/vehicles?per_page=20")  # Get all vehicles with higher limit
         if result.get("status_code") == 200:
             data = result.get("data", {})
             if "data" in data and isinstance(data["data"], list):
