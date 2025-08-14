@@ -255,7 +255,7 @@ const FAQsPage = () => {
               onClick={handleWhatsApp}
               className="bg-white text-blue-600 hover:bg-gray-100 p-6 h-auto flex items-center space-x-3"
             >
-              <MessageCircle className="h-6 w-6" />
+              <img src="https://img.icons8.com/?size=100&id=QkXeKixybttw&format=png&color=000000" alt="WhatsApp" className="h-6 w-6 invert" />
               <div className="text-left">
                 <div className="font-semibold">WhatsApp Chat</div>
                 <div className="text-sm opacity-80">Get instant answers</div>
