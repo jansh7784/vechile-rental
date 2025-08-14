@@ -215,7 +215,7 @@ export const vehicles = [
   {
     id: 11,
     name: "Ertiga cng",
-    image: "https://images.unsplash.com/photo-1529369623266-f5264b696110?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHwzfHxjYXIlMjByZW50YWx8ZW58MHx8fHwxNzU1MTk2ODUzfDA&ixlib=rb-4.1.0&q=85",
+    image: "/assets/Ertiga cng.jpg",
     transmission: "Manual",
     fuelType: "CNG + Petrol",
     fuelEfficiency: "25/km",
