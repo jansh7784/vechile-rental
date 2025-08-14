@@ -5,6 +5,7 @@ import { Button } from './ui/button';
 import { Badge } from './ui/badge';
 import Header from './Header';
 import Footer from './Footer';
+import { faqData } from '../data/mockData';
 
 const FAQsPage = () => {
   const [user, setUser] = useState(null);
@@ -12,101 +13,35 @@ const FAQsPage = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [expandedFAQ, setExpandedFAQ] = useState(null);
 
-  const faqs = [
-    {
-      id: 1,
-      question: "What documents do I need to rent a car?",
-      answer: "You need a valid driving license, government-issued ID proof (Aadhar/Passport), address proof, and a payment method. All documents should be original and valid. For international travelers, an International Driving Permit is required along with a passport.",
-      category: "Documentation",
-      popular: true
-    },
-    {
-      id: 2,
-      question: "What is the minimum age requirement for car rental?",
-      answer: "The minimum age requirement is 21 years for most vehicles. For luxury and premium cars, the minimum age may be 25 years. You should also have a valid driving license for at least 1 year. Additional verification may be required for younger drivers.",
-      category: "Age Requirements"
-    },
-    {
-      id: 3,
-      question: "How is the rental pricing calculated?",
-      answer: "Rental pricing is based on the duration (hourly/daily), vehicle category, and distance covered. Additional charges may apply for extra kilometers beyond the included limit, fuel, tolls, and parking. We offer transparent pricing with no hidden costs.",
-      category: "Pricing",
-      popular: true
-    },
-    {
-      id: 4,
-      question: "Is fuel included in the rental price?",
-      answer: "No, fuel is not included in the rental price. You will receive the vehicle with a certain fuel level and are expected to return it with the same level. Alternatively, you can opt for our fuel service at market rates. We also provide fuel cards for long-distance trips.",
-      category: "Fuel Policy"
-    },
-    {
-      id: 5,
-      question: "Can I extend my rental period?",
-      answer: "Yes, you can extend your rental period subject to vehicle availability. Please contact us at least 2 hours before your scheduled return time. Extension charges will apply as per our standard rates. Online extension is available through our app.",
-      category: "Rental Extensions"
-    },
-    {
-      id: 6,
-      question: "What happens in case of an accident or breakdown?",
-      answer: "In case of an accident, immediately contact the police and our 24/7 helpline. For breakdowns, call our roadside assistance. We provide 24/7 support to ensure your safety and minimize inconvenience. Emergency replacement vehicles are available when possible.",
-      category: "Emergency Support",
-      popular: true
-    },
-    {
-      id: 7,
-      question: "Can I cancel my booking?",
-      answer: "Yes, you can cancel your booking. Cancellation charges may apply based on the time of cancellation. Free cancellation is available if you cancel at least 24 hours before pickup time. Refunds are processed within 5-7 business days.",
-      category: "Cancellation Policy"
-    },
-    {
-      id: 8,
-      question: "Do you provide delivery and pickup services?",
-      answer: "Yes, we offer doorstep delivery and pickup services within the city limits. Additional charges may apply based on the location. Airport and railway station pickups are also available. We also offer valet parking services for return.",
-      category: "Delivery Services"
-    },
-    {
-      id: 9,
-      question: "What insurance coverage is provided?",
-      answer: "Basic insurance coverage is included in all rentals. This covers third-party liability and basic damage protection. Additional comprehensive insurance is available for complete peace of mind. Personal accident coverage can also be added.",
-      category: "Insurance"
-    },
-    {
-      id: 10,
-      question: "Can I add an additional driver?",
-      answer: "Yes, you can add additional drivers to your rental. The additional driver must meet the same age and documentation requirements as the primary driver. Additional charges may apply per extra driver. All drivers must be present during vehicle pickup.",
-      category: "Additional Drivers"
-    },
-    {
-      id: 11,
-      question: "What payment methods do you accept?",
-      answer: "We accept cash, credit/debit cards, UPI payments, and digital wallets. Online bookings can be paid via net banking, cards, or UPI. For corporate bookings, we also accept cheques and bank transfers. EMI options are available for long-term rentals.",
-      category: "Payment Methods"
-    },
-    {
-      id: 12,
-      question: "Are there any mileage restrictions?",
-      answer: "Our rental packages include a specific kilometer limit per day (usually 250-300 km). Extra kilometers are charged as per our tariff. For unlimited mileage, special packages are available. Highway tolls and parking charges are additional.",
-      category: "Mileage Policy"
-    },
-    {
-      id: 13,
-      question: "Can I travel to other states?",
-      answer: "Yes, interstate travel is allowed with proper documentation and prior notification. Additional permits may be required for certain states. Extra charges may apply for interstate travel. We provide all necessary documents for smooth travel.",
-      category: "Interstate Travel"
-    },
-    {
-      id: 14,
-      question: "What if I return the car late?",
-      answer: "Late returns are subject to additional charges calculated on an hourly basis. If you're running late, please inform us immediately. Grace period of 1 hour is provided for traffic or unforeseen delays. Repeated late returns may affect future bookings.",
-      category: "Late Returns"
-    },
-    {
-      id: 15,
-      question: "Do you offer long-term rental discounts?",
-      answer: "Yes, we offer attractive discounts for rentals of 7 days or more. Monthly packages are available with significant savings. Corporate rates are offered for bulk bookings. Contact our sales team for customized long-term packages.",
-      category: "Discounts"
+  // Convert faqData to match the existing structure with categories
+  const faqs = faqData.map(faq => {
+    let category = 'General';
+    if (faq.question.toLowerCase().includes('document') || faq.question.toLowerCase().includes('eligible')) {
+      category = 'Documentation';
+    } else if (faq.question.toLowerCase().includes('price') || faq.question.toLowerCase().includes('cost')) {
+      category = 'Pricing';
+    } else if (faq.question.toLowerCase().includes('cancel')) {
+      category = 'Cancellation Policy';
+    } else if (faq.question.toLowerCase().includes('extend')) {
+      category = 'Rental Extensions';
+    } else if (faq.question.toLowerCase().includes('travel') || faq.question.toLowerCase().includes('kilomet')) {
+      category = 'Travel Policy';
+    } else if (faq.question.toLowerCase().includes('booking') || faq.question.toLowerCase().includes('duration')) {
+      category = 'Booking';
+    } else if (faq.question.toLowerCase().includes('car') || faq.question.toLowerCase().includes('vehicle')) {
+      category = 'Vehicles';
+    } else if (faq.question.toLowerCase().includes('speed') || faq.question.toLowerCase().includes('pet')) {
+      category = 'Policies';
+    } else if (faq.question.toLowerCase().includes('pickup') || faq.question.toLowerCase().includes('delivery')) {
+      category = 'Delivery Services';
     }
-  ];
+
+    return {
+      ...faq,
+      category,
+      popular: faq.id <= 6 // First 6 FAQs are popular
+    };
+  });
 
   const categories = [...new Set(faqs.map(faq => faq.category))];
   const popularFAQs = faqs.filter(faq => faq.popular);
@@ -125,6 +60,17 @@ const FAQsPage = () => {
     setExpandedFAQ(expandedFAQ === faqId ? null : faqId);
   };
 
+  const handleWhatsApp = () => {
+    const phoneNumber = "919098103725";
+    const message = "Hello, I have a question about Car2go services.";
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappURL, '_blank');
+  };
+
+  const handleCall = () => {
+    window.open('tel:+919098103725', '_self');
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
       <Header
@@ -141,7 +87,7 @@ const FAQsPage = () => {
             Frequently Asked Questions
           </h1>
           <p className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto">
-            Find quick answers to common questions about our car rental services, policies, and procedures.
+            Find quick answers to common questions about Car2go rental services, policies, and procedures.
           </p>
         </div>
       </section>
@@ -186,7 +132,7 @@ const FAQsPage = () => {
                     {faq.question}
                   </h3>
                   <p className="text-gray-600 text-sm line-clamp-3">
-                    {faq.answer}
+                    {faq.answer.substring(0, 150)}...
                   </p>
                 </div>
               ))}
@@ -305,18 +251,24 @@ const FAQsPage = () => {
             Can't find what you're looking for? Our customer support team is here to help you 24/7.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
-            <Button className="bg-white text-blue-600 hover:bg-gray-100 p-6 h-auto flex items-center space-x-3">
+            <Button 
+              onClick={handleWhatsApp}
+              className="bg-white text-blue-600 hover:bg-gray-100 p-6 h-auto flex items-center space-x-3"
+            >
               <MessageCircle className="h-6 w-6" />
               <div className="text-left">
-                <div className="font-semibold">Live Chat</div>
+                <div className="font-semibold">WhatsApp Chat</div>
                 <div className="text-sm opacity-80">Get instant answers</div>
               </div>
             </Button>
-            <Button className="bg-white text-blue-600 hover:bg-gray-100 p-6 h-auto flex items-center space-x-3">
+            <Button 
+              onClick={handleCall}
+              className="bg-white text-blue-600 hover:bg-gray-100 p-6 h-auto flex items-center space-x-3"
+            >
               <Phone className="h-6 w-6" />
               <div className="text-left">
                 <div className="font-semibold">Call Support</div>
-                <div className="text-sm opacity-80">+91 98765 43210</div>
+                <div className="text-sm opacity-80">+91 90981 03725</div>
               </div>
             </Button>
           </div>
