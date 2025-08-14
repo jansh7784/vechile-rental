@@ -124,20 +124,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Popular Destinations */}
-        <div className="mt-12 pt-8 border-t border-gray-800">
-          <h4 className="text-lg font-semibold mb-4">Popular Destinations</h4>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 text-sm">
-            <span className="text-gray-300 hover:text-white cursor-pointer transition-colors duration-200">Ujjain</span>
-            <span className="text-gray-300 hover:text-white cursor-pointer transition-colors duration-200">Omkareshwar</span>
-            <span className="text-gray-300 hover:text-white cursor-pointer transition-colors duration-200">Maheshwar</span>
-            <span className="text-gray-300 hover:text-white cursor-pointer transition-colors duration-200">Bhopal</span>
-            <span className="text-gray-300 hover:text-white cursor-pointer transition-colors duration-200">Mandu</span>
-            <span className="text-gray-300 hover:text-white cursor-pointer transition-colors duration-200">Sanwariya Seth</span>
-            <span className="text-gray-300 hover:text-white cursor-pointer transition-colors duration-200">Jam Gate</span>
-          </div>
-        </div>
-
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
           <div className="text-sm text-gray-400 mb-4 md:mb-0">
