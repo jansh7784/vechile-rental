@@ -299,7 +299,7 @@ export const vehicles = [
   {
     id: 15,
     name: "Dzire petrol",
-    image: "https://images.pexels.com/photos/3369191/pexels-photo-3369191.jpeg",
+    image: "/assets/Dzire petrol.jpeg",
     transmission: "Manual",
     fuelType: "CNG + Petrol",
     fuelEfficiency: "20/km",
