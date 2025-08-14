@@ -211,10 +211,10 @@ const ContactPage = () => {
                     <div className="text-center py-12">
                       <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
                       <h3 className="text-2xl font-semibold text-gray-900 mb-2">
-                        Thank You!
+                        Message Sent Successfully!
                       </h3>
                       <p className="text-gray-600">
-                        Your message has been sent successfully. We'll get back to you soon!
+                        Your message has been sent to our Car2go team via email. We'll get back to you within 24 hours!
                       </p>
                     </div>
                   ) : (
