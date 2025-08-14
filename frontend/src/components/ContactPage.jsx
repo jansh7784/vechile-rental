@@ -19,6 +19,11 @@ const ContactPage = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
+  // Initialize EmailJS
+  React.useEffect(() => {
+    emailjs.init('15jgcBKyziBJf1VXp'); // Your public key
+  }, []);
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -31,23 +36,46 @@ const ContactPage = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        subject: '',
-        message: ''
-      });
-    }, 3000);
+    try {
+      // Prepare template parameters
+      const templateParams = {
+        title: "Contact Form Submission - Car2go",
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        subject: formData.subject,
+        message: formData.message,
+        time: new Date().toLocaleString()
+      };
+
+      // Send email using EmailJS
+      const response = await emailjs.send(
+        "service_xk40szb", // Your service ID
+        "template_6rwcvb3", // Your template ID  
+        templateParams
+      );
+
+      console.log('EmailJS Success:', response.status, response.text);
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+      
+      // Reset form after 3 seconds
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          subject: '',
+          message: ''
+        });
+      }, 3000);
+
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      setIsSubmitting(false);
+      alert('Failed to send message. Please try again or contact us directly.');
+    }
   };
 
   const contactInfo = [
