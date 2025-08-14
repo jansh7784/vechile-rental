@@ -153,11 +153,16 @@ const ContactPage = () => {
                       rel="noopener noreferrer"
                       className="w-10 h-10 bg-gradient-to-r from-pink-500 to-purple-600 rounded-lg flex items-center justify-center text-white hover:shadow-lg transition-shadow"
                     >
-                      <span className="text-sm font-bold">IG</span>
+                      <Instagram className="h-5 w-5" />
                     </a>
-                    <button className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center text-white hover:shadow-lg transition-shadow">
-                      <Phone className="h-5 w-5" />
-                    </button>
+                    <a
+                      href="https://wa.me/919098103725"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center text-white hover:shadow-lg transition-shadow"
+                    >
+                      <MessageCircle className="h-5 w-5" />
+                    </a>
                   </div>
                 </CardContent>
               </Card>
