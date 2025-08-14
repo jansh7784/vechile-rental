@@ -32,7 +32,7 @@ const LoginModal = ({ isOpen, onClose, onLogin }) => {
         onLogin(mockUser);
         toast({
           title: "Login Successful!",
-          description: "Welcome back to The Comfort Journey",
+          description: "Welcome back to Car2go",
         });
         onClose();
       } else {
