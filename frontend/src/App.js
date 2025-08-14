@@ -108,6 +108,7 @@ function App() {
           <Route path="/cookie-policy" element={<CookiePolicy />} />
           <Route path="/terms" element={<TermsOfUse />} />
           <Route path="/policies" element={<Policies />} />
+          <Route path="/test-email" element={<EmailJSTest />} />
         </Routes>
       </BrowserRouter>
     </div>
