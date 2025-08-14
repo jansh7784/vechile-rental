@@ -112,16 +112,16 @@ export const vehicles = [
     name: "Toyota Fortuner",
     image: "https://thecomfortjourney.com/uploads/1745396679183.webp",
     transmission: "Manual",
-    fuelType: "Petrol",
+    fuelType: "Diesel",
     fuelEfficiency: "12/km",
     features: "Self-Drive & Without Fuel",
     ac: true,
-    seating: "5 Persons",
+    seating: "7 Person",
     location: "Indore(MP)",
     pricing: {
-      daily: 2500
+      daily: 15000
     },
-    extraKmRate: "₹5/km",
+    extraKmRate: "₹20/km",
     discount: null,
     category: "Premium SUV",
     available: true,
