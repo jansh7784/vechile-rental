@@ -24,14 +24,14 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <img 
-                src="/src/assets/logo-1.jpg" 
-                alt="The Comfort Journey" 
+                src="/assets/logo-1.jpg" 
+                alt="Car2go" 
                 className="w-10 h-10 rounded-full object-cover"
                 onError={(e) => {
-                  e.target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' fill='%232563eb'/%3E%3Ctext x='20' y='25' font-family='Arial' font-size='16' font-weight='bold' text-anchor='middle' fill='white'%3ETCJ%3C/text%3E%3C/svg%3E";
+                  e.target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' fill='%232563eb'/%3E%3Ctext x='20' y='25' font-family='Arial' font-size='16' font-weight='bold' text-anchor='middle' fill='white'%3EC2G%3C/text%3E%3C/svg%3E";
                 }}
               />
-              <h3 className="text-xl font-bold">The Comfort Journey</h3>
+              <h3 className="text-xl font-bold">Car2go</h3>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
               Your trusted partner for self-drive car rentals in Indore. Experience comfort, reliability, and freedom with our premium fleet of vehicles.
@@ -105,7 +105,7 @@ const Footer = () => {
               
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-blue-400 flex-shrink-0" />
-                <span className="text-gray-300">info@thecomfortjourney.com</span>
+                <span className="text-gray-300">info@car2go.com</span>
               </div>
               
               <div className="flex items-start space-x-3">
@@ -143,7 +143,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
           <div className="text-sm text-gray-400 mb-4 md:mb-0">
-            © 2025 The Comfort Journey. All rights reserved.
+            © 2025 Car2go. All rights reserved.
           </div>
           <div className="flex space-x-6 text-sm">
             <a href="/privacy" className="text-gray-400 hover:text-white transition-colors duration-200">Privacy Policy</a>
