@@ -85,7 +85,7 @@ const AboutPage = () => {
       name: 'Rahul Sharma',
       location: 'Mumbai',
       rating: 5,
-      comment: 'The Comfort Journey has been my go-to car rental service for the past 3 years. Exceptional service every time!',
+      comment: 'Car2go has been my go-to car rental service for the past 3 years. Exceptional service every time!',
       image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face'
     },
     {
