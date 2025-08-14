@@ -278,7 +278,7 @@ export const vehicles = [
   {
     id: 14,
     name: "Brezza Zxi",
-    image: "https://images.pexels.com/photos/164634/pexels-photo-164634.jpeg",
+    image: "/assets/Brezza Zxi.jpg",
     transmission: "Manual",
     fuelType: "CNG + Petrol",
     fuelEfficiency: "25/km",
