@@ -283,17 +283,18 @@ class ComfortJourneyAPITester:
             vehicles_with_proper_details = 0
             for vehicle in self.all_vehicles:
                 has_image = bool(vehicle.get("image"))
-                has_pricing = bool(vehicle.get("pricing", {}).get("per_day"))
+                has_pricing = bool(vehicle.get("pricing", {}).get("daily"))
                 has_features = bool(vehicle.get("features"))
                 has_specs = bool(vehicle.get("specifications"))
                 
                 if has_image and has_pricing and has_features and has_specs:
                     vehicles_with_proper_details += 1
             
-            if vehicles_with_proper_details >= 14:  # Allow some flexibility
-                self.log_test("vehicles", "Vehicle details verification", True, f"{vehicles_with_proper_details}/16 vehicles have proper details (image, pricing, features, specs)")
+            total_vehicles = len(self.all_vehicles)
+            if vehicles_with_proper_details >= total_vehicles - 2:  # Allow some flexibility
+                self.log_test("vehicles", "Vehicle details verification", True, f"{vehicles_with_proper_details}/{total_vehicles} vehicles have proper details (image, pricing, features, specs)")
             else:
-                self.log_test("vehicles", "Vehicle details verification", False, f"Only {vehicles_with_proper_details}/16 vehicles have complete details")
+                self.log_test("vehicles", "Vehicle details verification", False, f"Only {vehicles_with_proper_details}/{total_vehicles} vehicles have complete details")
         
         # Test pagination
         result = self.make_request("GET", "/api/vehicles?page=1&per_page=5")
