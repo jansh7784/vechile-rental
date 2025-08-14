@@ -173,7 +173,7 @@ export const vehicles = [
   {
     id: 9,
     name: "Swift 2023",
-    image: "https://thecomfortjourney.com/uploads/1745402963254.jpeg",
+    image: "/assets/Swift 2023.jpeg",
     transmission: "Manual",
     fuelType: "Petrol",
     fuelEfficiency: "20/km",
