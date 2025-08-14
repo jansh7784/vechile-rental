@@ -53,30 +53,6 @@ const AboutPage = () => {
     { year: '2025', title: 'Future Forward', description: 'Expanding to new cities and introducing electric vehicles to our fleet' }
   ];
 
-  const testimonials = [
-    {
-      name: 'Rahul Sharma',
-      location: 'Mumbai',
-      rating: 5,
-      comment: 'Car2go has been my go-to car rental service for the past 3 years. Exceptional service every time!',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face'
-    },
-    {
-      name: 'Priya Patel',
-      location: 'Delhi',
-      rating: 5,
-      comment: 'Professional staff, well-maintained vehicles, and transparent pricing. Highly recommend for anyone visiting Indore.',
-      image: 'https://images.unsplash.com/photo-1494790108755-2616b612b5b5?w=150&h=150&fit=crop&crop=face'
-    },
-    {
-      name: 'Amit Kumar',
-      location: 'Bangalore',
-      rating: 5,
-      comment: 'Great experience with their team. The booking process is smooth and customer support is always helpful.',
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face'
-    }
-  ];
-
   return (
     <div className="min-h-screen bg-gray-50">
       <Header
