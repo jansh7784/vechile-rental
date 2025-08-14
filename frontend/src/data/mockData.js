@@ -236,7 +236,7 @@ export const vehicles = [
   {
     id: 12,
     name: "Baleno CNG",
-    image: "https://images.unsplash.com/photo-1630165356623-266076eaceb6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwyfHx2ZWhpY2xlc3xlbnwwfHx8fDE3NTUxOTY4NTl8MA&ixlib=rb-4.1.0&q=85",
+    image: "/assets/Baleno CNG.jpg",
     transmission: "Manual",
     fuelType: "CNG + Petrol",
     fuelEfficiency: "25/km",
