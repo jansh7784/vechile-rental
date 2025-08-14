@@ -320,7 +320,7 @@ export const vehicles = [
   {
     id: 16,
     name: "Aura cng",
-    image: "https://images.unsplash.com/photo-1600608672825-b4fb6c2781de?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzl8MHwxfHNlYXJjaHw2fHxjYXIlMjByZW50YWx8ZW58MHx8fHwxNzUzODk3NTgzfDA&ixlib=rb-4.1.0&q=85",
+    image: "/assets/Aura cng.jpeg",
     transmission: "Manual",
     fuelType: "CNG + Petrol",
     fuelEfficiency: "25/km",
