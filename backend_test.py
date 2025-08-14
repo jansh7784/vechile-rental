@@ -254,12 +254,44 @@ class ComfortJourneyAPITester:
         else:
             self.log_test("vehicles", "Get all vehicles", False, f"Status: {result.get('status_code')}, Error: {result.get('error', 'Unknown')}")
         
+        # Test vehicle filtering with MPV category
+        result = self.make_request("GET", "/api/vehicles?category=MPV")
+        if result.get("status_code") == 200:
+            data = result.get("data", {})
+            if "data" in data and isinstance(data["data"], list):
+                mpv_vehicles = data["data"]
+                if len(mpv_vehicles) > 0:
+                    self.log_test("vehicles", "MPV category filtering", True, f"Found {len(mpv_vehicles)} MPV vehicles")
+                else:
+                    self.log_test("vehicles", "MPV category filtering", False, "No MPV vehicles found")
+            else:
+                self.log_test("vehicles", "MPV category filtering", False, "Invalid response format")
+        else:
+            self.log_test("vehicles", "MPV category filtering", False, f"Status: {result.get('status_code')}")
+        
         # Test vehicle filtering
         result = self.make_request("GET", "/api/vehicles?category=SUV&transmission=automatic")
         if result.get("status_code") == 200:
             self.log_test("vehicles", "Vehicle filtering", True, "Filtering works")
         else:
             self.log_test("vehicles", "Vehicle filtering", False, f"Status: {result.get('status_code')}")
+        
+        # Test vehicle details verification for new vehicles
+        if hasattr(self, 'all_vehicles'):
+            vehicles_with_proper_details = 0
+            for vehicle in self.all_vehicles:
+                has_image = bool(vehicle.get("image"))
+                has_pricing = bool(vehicle.get("pricing", {}).get("per_day"))
+                has_features = bool(vehicle.get("features"))
+                has_specs = bool(vehicle.get("specifications"))
+                
+                if has_image and has_pricing and has_features and has_specs:
+                    vehicles_with_proper_details += 1
+            
+            if vehicles_with_proper_details >= 14:  # Allow some flexibility
+                self.log_test("vehicles", "Vehicle details verification", True, f"{vehicles_with_proper_details}/16 vehicles have proper details (image, pricing, features, specs)")
+            else:
+                self.log_test("vehicles", "Vehicle details verification", False, f"Only {vehicles_with_proper_details}/16 vehicles have complete details")
         
         # Test pagination
         result = self.make_request("GET", "/api/vehicles?page=1&per_page=5")
