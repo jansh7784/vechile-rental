@@ -18,6 +18,10 @@ import TravelBlogs from "./components/TravelBlogs";
 import WhyChooseUs from "./components/WhyChooseUs";
 import CustomerReviews from "./components/CustomerReviews";
 import FAQSection from "./components/FAQSection";
+import PrivacyPolicy from "./components/PrivacyPolicy";
+import CookiePolicy from "./components/CookiePolicy";
+import TermsOfUse from "./components/TermsOfUse";
+import Policies from "./components/Policies";
 import { Toaster } from "./components/ui/toaster";
 
 const Home = () => {
