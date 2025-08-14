@@ -141,12 +141,12 @@ const VehiclesCatalog = ({ onBookNow, searchQuery = '' }) => {
           <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight animate-fade-in-up">
             SELECT AND BOOK A CAR RENTAL WITH{' '}
             <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent">
-              THE COMFORT JOURNEY
+              CAR2GO
             </span>
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8 animate-fade-in-up animation-delay-300">
-            Pick a self-drive car rental in Indore from The Comfort Journey. Experience premium comfort and reliability.
+            Pick a self-drive car rental in Indore from Car2go. Experience premium comfort and reliability.
           </p>
 
           {/* Quick stats */}
