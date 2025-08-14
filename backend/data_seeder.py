@@ -186,19 +186,19 @@ async def seed_vehicles():
                 "image": "https://images.pexels.com/photos/164634/pexels-photo-164634.jpeg",
                 "images": [],
                 "transmission": "Manual",
-                "fuel_type": "Petrol",
+                "fuel_type": "Diesel",
                 "features": "Self-Drive & Without Fuel",
                 "ac": True,
-                "seating": "5 Persons",
+                "seating": "7 Person",
                 "location": "Indore(MP)",
                 "pricing": {
-                    "daily": 2500
+                    "daily": 15000
                 },
-                "extra_km_rate": "₹5/km",
+                "extra_km_rate": "₹20/km",
                 "discount": None,
                 "available": True,
                 "specifications": {
-                    "engine": "2.8L Petrol",
+                    "engine": "2.8L Diesel",
                     "mileage": "12 km/l",
                     "top_speed": "190 km/h",
                     "safety_rating": 5
