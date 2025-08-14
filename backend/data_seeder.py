@@ -257,6 +257,214 @@ async def seed_vehicles():
                 },
                 "created_at": datetime.utcnow(),
                 "updated_at": datetime.utcnow()
+            },
+            {
+                "name": "Brezza Vxi",
+                "category": "Compact SUV",
+                "image": "https://images.unsplash.com/photo-1565043666747-69f6646db940?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHwxfHxjYXIlMjByZW50YWx8ZW58MHx8fHwxNzU1MTk2ODUzfDA&ixlib=rb-4.1.0&q=85",
+                "images": [],
+                "transmission": "Manual",
+                "fuel_type": "Petrol",
+                "features": "Self-Drive & Without Fuel",
+                "ac": True,
+                "seating": "5 Person",
+                "location": "Indore(MP)",
+                "pricing": {
+                    "daily": 3000
+                },
+                "extra_km_rate": "₹6/km",
+                "discount": None,
+                "available": True,
+                "specifications": {
+                    "engine": "1.5L Petrol",
+                    "mileage": "15 km/l",
+                    "top_speed": "165 km/h",
+                    "safety_rating": 4
+                },
+                "created_at": datetime.utcnow(),
+                "updated_at": datetime.utcnow()
+            },
+            {
+                "name": "Ertiga cng",
+                "category": "MPV",
+                "image": "https://images.unsplash.com/photo-1529369623266-f5264b696110?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHwzfHxjYXIlMjByZW50YWx8ZW58MHx8fHwxNzU1MTk2ODUzfDA&ixlib=rb-4.1.0&q=85",
+                "images": [],
+                "transmission": "Manual",
+                "fuel_type": "CNG + Petrol",
+                "features": "Self-Drive & Without Fuel",
+                "ac": True,
+                "seating": "7 Person",
+                "location": "Indore(MP)",
+                "pricing": {
+                    "daily": 3500
+                },
+                "extra_km_rate": "₹6/km",
+                "discount": None,
+                "available": True,
+                "specifications": {
+                    "engine": "1.5L CNG+Petrol",
+                    "mileage": "25 km/l",
+                    "top_speed": "170 km/h",
+                    "safety_rating": 4
+                },
+                "created_at": datetime.utcnow(),
+                "updated_at": datetime.utcnow()
+            },
+            {
+                "name": "Baleno CNG",
+                "category": "Hatchback",
+                "image": "https://images.unsplash.com/photo-1630165356623-266076eaceb6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwyfHx2ZWhpY2xlc3xlbnwwfHx8fDE3NTUxOTY4NTl8MA&ixlib=rb-4.1.0&q=85",
+                "images": [],
+                "transmission": "Manual",
+                "fuel_type": "CNG + Petrol",
+                "features": "Self-Drive & Without Fuel",
+                "ac": True,
+                "seating": "5 Persons",
+                "location": "Indore(MP)",
+                "pricing": {
+                    "daily": 2500
+                },
+                "extra_km_rate": "₹6/km",
+                "discount": None,
+                "available": True,
+                "specifications": {
+                    "engine": "1.2L CNG+Petrol",
+                    "mileage": "25 km/l",
+                    "top_speed": "165 km/h",
+                    "safety_rating": 4
+                },
+                "created_at": datetime.utcnow(),
+                "updated_at": datetime.utcnow()
+            },
+            {
+                "name": "Baleno Petrol blue",
+                "category": "Hatchback",
+                "image": "https://images.pexels.com/photos/3369191/pexels-photo-3369191.jpeg",
+                "images": [],
+                "transmission": "Manual",
+                "fuel_type": "Petrol",
+                "features": "Self-Drive & Without Fuel",
+                "ac": True,
+                "seating": "5 Persons",
+                "location": "Indore(MP)",
+                "pricing": {
+                    "daily": 2500
+                },
+                "extra_km_rate": "₹5/km",
+                "discount": None,
+                "available": True,
+                "specifications": {
+                    "engine": "1.2L Petrol",
+                    "mileage": "18 km/l",
+                    "top_speed": "165 km/h",
+                    "safety_rating": 4
+                },
+                "created_at": datetime.utcnow(),
+                "updated_at": datetime.utcnow()
+            },
+            {
+                "name": "Brezza Zxi",
+                "category": "Compact SUV",
+                "image": "https://images.pexels.com/photos/164634/pexels-photo-164634.jpeg",
+                "images": [],
+                "transmission": "Manual",
+                "fuel_type": "CNG + Petrol",
+                "features": "Self-Drive & Without Fuel",
+                "ac": True,
+                "seating": "5 Persons",
+                "location": "Indore(MP)",
+                "pricing": {
+                    "daily": 3000
+                },
+                "extra_km_rate": "₹5/km",
+                "discount": None,
+                "available": True,
+                "specifications": {
+                    "engine": "1.5L CNG+Petrol",
+                    "mileage": "25 km/l",
+                    "top_speed": "165 km/h",
+                    "safety_rating": 4
+                },
+                "created_at": datetime.utcnow(),
+                "updated_at": datetime.utcnow()
+            },
+            {
+                "name": "Dzire petrol",
+                "category": "Sedan",
+                "image": "https://images.pexels.com/photos/3369191/pexels-photo-3369191.jpeg",
+                "images": [],
+                "transmission": "Manual",
+                "fuel_type": "CNG + Petrol",
+                "features": "Self-Drive & Without Fuel",
+                "ac": True,
+                "seating": "5 Persons",
+                "location": "Indore(MP)",
+                "pricing": {
+                    "daily": 2500
+                },
+                "extra_km_rate": "₹5/km",
+                "discount": None,
+                "available": True,
+                "specifications": {
+                    "engine": "1.2L CNG+Petrol",
+                    "mileage": "20 km/l",
+                    "top_speed": "165 km/h",
+                    "safety_rating": 4
+                },
+                "created_at": datetime.utcnow(),
+                "updated_at": datetime.utcnow()
+            },
+            {
+                "name": "Aura cng",
+                "category": "Sedan",
+                "image": "https://images.unsplash.com/photo-1600608672825-b4fb6c2781de?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzl8MHwxfHNlYXJjaHw2fHxjYXIlMjByZW50YWx8ZW58MHx8fHwxNzUzODk3NTgzfDA&ixlib=rb-4.1.0&q=85",
+                "images": [],
+                "transmission": "Manual",
+                "fuel_type": "CNG + Petrol",
+                "features": "Self-Drive & Without Fuel",
+                "ac": True,
+                "seating": "5 Persons",
+                "location": "Indore(MP)",
+                "pricing": {
+                    "daily": 2500
+                },
+                "extra_km_rate": "₹6/km",
+                "discount": None,
+                "available": True,
+                "specifications": {
+                    "engine": "1.2L CNG+Petrol",
+                    "mileage": "25 km/l",
+                    "top_speed": "165 km/h",
+                    "safety_rating": 4
+                },
+                "created_at": datetime.utcnow(),
+                "updated_at": datetime.utcnow()
+            },
+            {
+                "name": "Swift 2023",
+                "category": "Hatchback",
+                "image": "https://images.unsplash.com/photo-1565043666747-69f6646db940?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHwxfHxjYXIlMjByZW50YWx8ZW58MHx8fHwxNzU1MTk2ODUzfDA&ixlib=rb-4.1.0&q=85",
+                "images": [],
+                "transmission": "Manual",
+                "fuel_type": "Petrol",
+                "features": "Self-Drive & Without Fuel",
+                "ac": True,
+                "seating": "5 Persons",
+                "location": "Indore(MP)",
+                "pricing": {
+                    "daily": 2500
+                },
+                "extra_km_rate": "₹5/km",
+                "discount": None,
+                "available": True,
+                "specifications": {
+                    "engine": "1.2L Petrol",
+                    "mileage": "20 km/l",
+                    "top_speed": "165 km/h",
+                    "safety_rating": 4
+                },
+                "created_at": datetime.utcnow(),
+                "updated_at": datetime.utcnow()
             }
         ]
         
