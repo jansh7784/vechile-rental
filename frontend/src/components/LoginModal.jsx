@@ -104,7 +104,7 @@ const LoginModal = ({ isOpen, onClose, onLogin }) => {
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
           <DialogTitle className="text-center text-2xl font-bold">
-            Welcome to The Comfort Journey
+            Welcome to Car2go
           </DialogTitle>
         </DialogHeader>
 
