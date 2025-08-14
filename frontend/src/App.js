@@ -22,6 +22,7 @@ import PrivacyPolicy from "./components/PrivacyPolicy";
 import CookiePolicy from "./components/CookiePolicy";
 import TermsOfUse from "./components/TermsOfUse";
 import Policies from "./components/Policies";
+import EmailJSTest from "./components/EmailJSTest";
 import { Toaster } from "./components/ui/toaster";
 
 const Home = () => {
