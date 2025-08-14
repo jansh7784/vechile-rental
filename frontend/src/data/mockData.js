@@ -89,7 +89,7 @@ export const vehicles = [
   {
     id: 5,
     name: "Mahindra 3XO AX7L",
-    image: "https://thecomfortjourney.com/uploads/1748599850237.jpg",
+    image: "/assets/Mahindra 3XO AX7L.jpg",
     transmission: "Manual",
     fuelType: "Diesel",
     fuelEfficiency: "20/km",
