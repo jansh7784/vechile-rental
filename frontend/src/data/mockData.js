@@ -257,7 +257,7 @@ export const vehicles = [
   {
     id: 13,
     name: "Baleno Petrol blue",
-    image: "https://images.pexels.com/photos/3369191/pexels-photo-3369191.jpeg",
+    image: "/assets/Baleno Petrol blue.jpg",
     transmission: "Manual",
     fuelType: "Petrol",
     fuelEfficiency: "18/km",
