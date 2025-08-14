@@ -178,7 +178,7 @@ const Header = ({ onSearchClick }) => {
           className="w-12 h-12 bg-green-600 hover:bg-green-700 rounded-full flex items-center justify-center shadow-lg transition-colors duration-200"
           title="WhatsApp +91 90981 03725"
         >
-          <MessageCircle className="h-6 w-6 text-white" />
+          <img src="https://img.icons8.com/?size=100&id=QkXeKixybttw&format=png&color=000000" alt="WhatsApp" className="h-6 w-6 invert" />
         </button>
         <button 
           onClick={handleInstagram}
