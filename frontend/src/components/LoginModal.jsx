@@ -73,7 +73,7 @@ const LoginModal = ({ isOpen, onClose, onLogin }) => {
         onLogin(newUser);
         toast({
           title: "Account Created!",
-          description: "Welcome to The Comfort Journey",
+          description: "Welcome to Car2go",
         });
         onClose();
       } else {
