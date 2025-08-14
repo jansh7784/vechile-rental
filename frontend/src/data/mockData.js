@@ -152,7 +152,7 @@ export const vehicles = [
   {
     id: 8,
     name: "Swift Epic new",
-    image: "https://thecomfortjourney.com/uploads/1748598091284.jpeg",
+    image: "/assets/Swift Epic new.jpeg",
     transmission: "Manual",
     fuelType: "Petrol",
     fuelEfficiency: "20/km",
