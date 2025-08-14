@@ -190,6 +190,153 @@ export const vehicles = [
     available: true,
     selfDrive: true,
     description: "Modern and reliable hatchback with advanced features"
+  },
+  {
+    id: 10,
+    name: "Brezza Vxi",
+    image: "https://images.unsplash.com/photo-1565043666747-69f6646db940?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHwxfHxjYXIlMjByZW50YWx8ZW58MHx8fHwxNzU1MTk2ODUzfDA&ixlib=rb-4.1.0&q=85",
+    transmission: "Manual",
+    fuelType: "Petrol",
+    fuelEfficiency: "15/km",
+    features: "Self-Drive & Without Fuel",
+    ac: true,
+    seating: "5 Person",
+    location: "Indore(MP)",
+    pricing: {
+      daily: 3000
+    },
+    extraKmRate: "₹6/km",
+    discount: null,
+    category: "Compact SUV",
+    available: true,
+    selfDrive: true,
+    description: "Compact SUV perfect for city and highway drives"
+  },
+  {
+    id: 11,
+    name: "Ertiga cng",
+    image: "https://images.unsplash.com/photo-1529369623266-f5264b696110?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHwzfHxjYXIlMjByZW50YWx8ZW58MHx8fHwxNzU1MTk2ODUzfDA&ixlib=rb-4.1.0&q=85",
+    transmission: "Manual",
+    fuelType: "CNG + Petrol",
+    fuelEfficiency: "25/km",
+    features: "Self-Drive & Without Fuel",
+    ac: true,
+    seating: "7 Person",
+    location: "Indore(MP)",
+    pricing: {
+      daily: 3500
+    },
+    extraKmRate: "₹6/km",
+    discount: null,
+    category: "MPV",
+    available: true,
+    selfDrive: true,
+    description: "Spacious MPV perfect for family travels with excellent fuel efficiency"
+  },
+  {
+    id: 12,
+    name: "Baleno CNG",
+    image: "https://images.unsplash.com/photo-1630165356623-266076eaceb6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwyfHx2ZWhpY2xlc3xlbnwwfHx8fDE3NTUxOTY4NTl8MA&ixlib=rb-4.1.0&q=85",
+    transmission: "Manual",
+    fuelType: "CNG + Petrol",
+    fuelEfficiency: "25/km",
+    features: "Self-Drive & Without Fuel",
+    ac: true,
+    seating: "5 Persons",
+    location: "Indore(MP)",
+    pricing: {
+      daily: 2500
+    },
+    extraKmRate: "₹6/km",
+    discount: null,
+    category: "Hatchback",
+    available: true,
+    selfDrive: true,
+    description: "Fuel-efficient hatchback with CNG option for economical drives"
+  },
+  {
+    id: 13,
+    name: "Baleno Petrol blue",
+    image: "https://images.pexels.com/photos/3369191/pexels-photo-3369191.jpeg",
+    transmission: "Manual",
+    fuelType: "Petrol",
+    fuelEfficiency: "18/km",
+    features: "Self-Drive & Without Fuel",
+    ac: true,
+    seating: "5 Persons",
+    location: "Indore(MP)",
+    pricing: {
+      daily: 2500
+    },
+    extraKmRate: "₹5/km",
+    discount: null,
+    category: "Hatchback",
+    available: true,
+    selfDrive: true,
+    description: "Stylish blue hatchback with excellent petrol efficiency"
+  },
+  {
+    id: 14,
+    name: "Brezza Zxi",
+    image: "https://images.pexels.com/photos/164634/pexels-photo-164634.jpeg",
+    transmission: "Manual",
+    fuelType: "CNG + Petrol",
+    fuelEfficiency: "25/km",
+    features: "Self-Drive & Without Fuel",
+    ac: true,
+    seating: "5 Persons",
+    location: "Indore(MP)",
+    pricing: {
+      daily: 3000
+    },
+    extraKmRate: "₹5/km",
+    discount: null,
+    category: "Compact SUV",
+    available: true,
+    selfDrive: true,
+    description: "Premium variant of Brezza with dual fuel options"
+  },
+  {
+    id: 15,
+    name: "Dzire petrol",
+    image: "https://images.pexels.com/photos/3369191/pexels-photo-3369191.jpeg",
+    transmission: "Manual",
+    fuelType: "CNG + Petrol",
+    fuelEfficiency: "20/km",
+    features: "Self-Drive & Without Fuel",
+    ac: true,
+    seating: "5 Persons",
+    location: "Indore(MP)",
+    pricing: {
+      daily: 2500
+    },
+    extraKmRate: "₹5/km",
+    discount: null,
+    category: "Sedan",
+    available: true,
+    selfDrive: true,
+    description: "Reliable sedan with dual fuel technology for cost-effective rides"
+  },
+  {
+    id: 16,
+    name: "Aura cng",
+    image: "https://images.unsplash.com/photo-1600608672825-b4fb6c2781de?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzl8MHwxfHNlYXJjaHw2fHxjYXIlMjByZW50YWx8ZW58MHx8fHwxNzUzODk3NTgzfDA&ixlib=rb-4.1.0&q=85",
+    transmission: "Manual",
+    fuelType: "CNG + Petrol",
+    fuelEfficiency: "25/km",
+    features: "Self-Drive & Without Fuel",
+    ac: true,
+    seating: "5 Persons",
+    location: "Indore(MP)",
+    pricing: {
+      daily: 2500
+    },
+    extraKmRate: "₹6/km",
+    discount: null,
+    category: "Sedan",
+    available: true,
+    selfDrive: true,
+    description: "Modern sedan with excellent CNG efficiency and comfortable interiors"
   }
 ];
 
