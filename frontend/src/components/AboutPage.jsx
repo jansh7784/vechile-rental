@@ -148,7 +148,7 @@ const AboutPage = () => {
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Story</h2>
               <div className="space-y-4 text-gray-600 leading-relaxed">
                 <p>
-                  The Comfort Journey began in 2018 with a simple vision: to make car rentals accessible, 
+                  Car2go began in 2018 with a simple vision: to make car rentals accessible, 
                   affordable, and reliable for everyone. What started as a small business with just 5 vehicles 
                   has grown into one of Madhya Pradesh's most trusted car rental services.
                 </p>
