@@ -118,7 +118,7 @@ const AboutPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              About The Comfort Journey
+              About Car2go
             </h1>
             <p className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto">
               Your trusted partner for comfortable, reliable, and affordable car rental services since 2018.
