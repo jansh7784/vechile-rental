@@ -250,7 +250,7 @@ const AboutPage = () => {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Meet Our Team</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              The passionate professionals behind The Comfort Journey, dedicated to making your travel dreams a reality.
+              The passionate professionals behind Car2go, dedicated to making your travel dreams a reality.
             </p>
           </div>
 
