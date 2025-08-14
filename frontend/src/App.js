@@ -103,6 +103,10 @@ function App() {
           <Route path="/faqs" element={<FAQsPage />} />
           <Route path="/blogs" element={<BlogsPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/cookie-policy" element={<CookiePolicy />} />
+          <Route path="/terms" element={<TermsOfUse />} />
+          <Route path="/policies" element={<Policies />} />
         </Routes>
       </BrowserRouter>
     </div>
