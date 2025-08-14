@@ -4,7 +4,7 @@ export const vehicles = [
   {
     id: 1,
     name: "Thar RWD",
-    image: "https://thecomfortjourney.com/uploads/1748600549669.jpg",
+    image: "/assets/thar.jpg",
     transmission: "Manual",
     fuelType: "Diesel",
     fuelEfficiency: "15/km",
