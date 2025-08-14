@@ -93,7 +93,7 @@ const LoginModal = ({ isOpen, onClose, onLogin }) => {
       onLogin(mockUser);
       toast({
         title: "Demo Login Successful!",
-        description: "Welcome to The Comfort Journey",
+        description: "Welcome to Car2go",
       });
       onClose();
     }, 500);
