@@ -67,16 +67,14 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Our Services */}
+          {/* Legal */}
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold">Our Services</h4>
+            <h4 className="text-lg font-semibold">Legal</h4>
             <ul className="space-y-2 text-sm">
-              <li className="text-gray-300">Self-Drive Car Rental</li>
-              <li className="text-gray-300">Airport Pickup & Drop</li>
-              <li className="text-gray-300">Outstation Travel</li>
-              <li className="text-gray-300">Wedding Car Rental</li>
-              <li className="text-gray-300">Corporate Travel</li>
-              <li className="text-gray-300">24/7 Roadside Assistance</li>
+              <li><a href="/privacy-policy" className="text-gray-300 hover:text-white transition-colors duration-200">Privacy Policy</a></li>
+              <li><a href="/cookie-policy" className="text-gray-300 hover:text-white transition-colors duration-200">Cookie Policy</a></li>
+              <li><a href="/terms" className="text-gray-300 hover:text-white transition-colors duration-200">Terms of Use</a></li>
+              <li><a href="/policies" className="text-gray-300 hover:text-white transition-colors duration-200">Cancellation & Refund</a></li>
             </ul>
           </div>
 
