@@ -316,7 +316,7 @@ const AboutPage = () => {
             Ready to Start Your Journey?
           </h3>
           <p className="text-lg opacity-90 mb-8">
-            Join thousands of satisfied customers who trust The Comfort Journey for their travel needs.
+            Join thousands of satisfied customers who trust Car2go for their travel needs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3">
