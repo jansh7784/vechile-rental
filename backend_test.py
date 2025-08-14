@@ -579,7 +579,7 @@ class ComfortJourneyAPITester:
 def main():
     """Main function to run tests"""
     # Get backend URL from environment or use default
-    backend_url = "https://public-asset-ref.preview.emergentagent.com"
+    backend_url = "https://selfdrive-fleet.preview.emergentagent.com"
     
     print(f"Backend URL: {backend_url}")
     
