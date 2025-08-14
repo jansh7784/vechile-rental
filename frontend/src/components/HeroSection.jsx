@@ -137,7 +137,7 @@ const HeroSection = ({ onBookNowClick }) => {
             <Button
               size="lg"
               onClick={onBookNowClick}
-              className="bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-black font-bold px-10 py-5 text-xl rounded-full transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-yellow-500/25 group"
+              className="bg-gradient-to-r from-gray-800 to-black hover:from-gray-900 hover:to-gray-800 text-white font-bold px-10 py-5 text-xl rounded-full transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-gray-800/25 group"
             >
               <span className="mr-2">{heroSlides[currentSlide].ctaText}</span>
               <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
