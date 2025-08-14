@@ -119,12 +119,17 @@ const AboutPage = () => {
               </div>
             </div>
             <div className="relative">
-              <img
-                src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzZ8MHwxfHNlYXJjaHwxfHxyb2FkJTIwdHJpcHxlbnwwfHx8fDE3NTM4OTc1OTV8MA&ixlib=rb-4.1.0&q=85"
-                alt="Our journey"
-                className="rounded-lg shadow-xl"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-lg"></div>
+              <div className="bg-white rounded-lg shadow-xl p-8 flex items-center justify-center">
+                <img
+                  src="/assets/logo-1.jpg"
+                  alt="Car2go Logo"
+                  className="rounded-lg max-w-full h-auto"
+                  onError={(e) => {
+                    e.target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23fbbf24'/%3E%3Ctext x='200' y='160' font-family='Arial' font-size='32' font-weight='bold' text-anchor='middle' fill='black'%3ECAR2GO%3C/text%3E%3C/svg%3E";
+                  }}
+                />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent rounded-lg"></div>
             </div>
           </div>
         </div>
