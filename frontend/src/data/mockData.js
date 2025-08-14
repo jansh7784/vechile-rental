@@ -169,6 +169,27 @@ export const vehicles = [
     available: true,
     selfDrive: true,
     description: "Compact and efficient car for city exploration"
+  },
+  {
+    id: 9,
+    name: "Swift 2023",
+    image: "https://thecomfortjourney.com/uploads/1745402963254.jpeg",
+    transmission: "Manual",
+    fuelType: "Petrol",
+    fuelEfficiency: "20/km",
+    features: "Self-Drive & Without Fuel",
+    ac: true,
+    seating: "5 Persons",
+    location: "Indore(MP)",
+    pricing: {
+      daily: 2500
+    },
+    extraKmRate: "₹5/km",
+    discount: null,
+    category: "Hatchback",
+    available: true,
+    selfDrive: true,
+    description: "Modern and reliable hatchback with advanced features"
   }
 ];
 
