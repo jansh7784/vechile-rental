@@ -152,6 +152,9 @@ backend:
       - working: true
         agent: "testing"
         comment: "✅ PASS: Enhanced vehicle system tested. Found 8 vehicles including new models: Scorpio S11, Mahindra 3XO AX7L, Dzire new, Swift Epic new. All vehicle management features working correctly."
+      - working: true
+        agent: "testing"
+        comment: "✅ PASS: Updated vehicle management system verified successfully. Found all 16 vehicles (updated from 8) including 8 new models: Brezza Vxi, Ertiga cng, Baleno CNG, Baleno Petrol blue, Brezza Zxi, Dzire petrol, Aura cng, Swift 2023. Toyota Fortuner has correct pricing (₹15000/day, ₹20/km, Diesel, 7 Person seating). MPV category available with Ertiga cng. All vehicle details properly structured with images, pricing, features, and specifications. API pagination working correctly - needed per_page=20 to retrieve all vehicles. All vehicle management endpoints functional."
 
   - task: "Content Management API"
     implemented: true
