@@ -174,37 +174,81 @@ class ComfortJourneyAPITester:
         """Test vehicle management endpoints"""
         print("\n🚗 Testing Vehicle Management...")
         
-        # Test get all vehicles - should now have 9 vehicles
+        # Test get all vehicles - should now have 16 vehicles
         result = self.make_request("GET", "/api/vehicles")
         if result.get("status_code") == 200:
             data = result.get("data", {})
             if "data" in data and isinstance(data["data"], list):
                 vehicle_count = len(data["data"])
-                expected_vehicles = ["Scorpio S11", "Mahindra 3XO AX7L", "Dzire new", "Swift Epic new"]
                 
-                # Check if we have 9 vehicles as expected
-                if vehicle_count == 9:
-                    self.log_test("vehicles", "Get all vehicles", True, f"Retrieved {vehicle_count} vehicles (enhanced with new models)")
+                # Check if we have 16 vehicles as expected
+                if vehicle_count == 16:
+                    self.log_test("vehicles", "Vehicle count verification", True, f"Retrieved {vehicle_count} vehicles (updated from 8 to 16)")
                     
                     # Check for specific new vehicles mentioned in requirements
+                    expected_new_vehicles = ["Brezza Vxi", "Ertiga cng", "Baleno CNG", "Baleno Petrol blue", 
+                                           "Brezza Zxi", "Dzire petrol", "Aura cng", "Swift 2023"]
                     vehicle_names = [v.get("name", "") for v in data["data"]]
                     found_new_vehicles = []
-                    for expected in expected_vehicles:
+                    
+                    for expected in expected_new_vehicles:
                         for name in vehicle_names:
                             if expected.lower() in name.lower():
                                 found_new_vehicles.append(expected)
                                 break
                     
-                    if found_new_vehicles:
-                        self.log_test("vehicles", "New vehicle models", True, f"Found new models: {', '.join(found_new_vehicles)}")
+                    if len(found_new_vehicles) >= 6:  # Allow some flexibility in naming
+                        self.log_test("vehicles", "New vehicle models", True, f"Found {len(found_new_vehicles)} new models: {', '.join(found_new_vehicles)}")
                     else:
-                        self.log_test("vehicles", "New vehicle models", False, "Expected new models not found in vehicle list")
+                        self.log_test("vehicles", "New vehicle models", False, f"Expected 8 new models, found {len(found_new_vehicles)}: {', '.join(found_new_vehicles)}")
+                    
+                    # Check for Toyota Fortuner with correct pricing
+                    toyota_fortuner = None
+                    for vehicle in data["data"]:
+                        if "fortuner" in vehicle.get("name", "").lower():
+                            toyota_fortuner = vehicle
+                            break
+                    
+                    if toyota_fortuner:
+                        pricing = toyota_fortuner.get("pricing", {})
+                        fuel_type = toyota_fortuner.get("fuel_type", "")
+                        seating = toyota_fortuner.get("seating_capacity", 0)
+                        
+                        # Check Toyota Fortuner specifications
+                        fortuner_correct = True
+                        issues = []
+                        
+                        if pricing.get("per_day") != 15000:
+                            fortuner_correct = False
+                            issues.append(f"per_day: expected 15000, got {pricing.get('per_day')}")
+                        
+                        if pricing.get("per_km") != 20:
+                            fortuner_correct = False
+                            issues.append(f"per_km: expected 20, got {pricing.get('per_km')}")
+                        
+                        if fuel_type.lower() != "diesel":
+                            fortuner_correct = False
+                            issues.append(f"fuel_type: expected Diesel, got {fuel_type}")
+                        
+                        if seating != 7:
+                            fortuner_correct = False
+                            issues.append(f"seating: expected 7, got {seating}")
+                        
+                        if fortuner_correct:
+                            self.log_test("vehicles", "Toyota Fortuner fix", True, "Toyota Fortuner has correct pricing (₹15000/day, ₹20/km, Diesel, 7 seats)")
+                        else:
+                            self.log_test("vehicles", "Toyota Fortuner fix", False, f"Toyota Fortuner issues: {'; '.join(issues)}")
+                    else:
+                        self.log_test("vehicles", "Toyota Fortuner fix", False, "Toyota Fortuner not found in vehicle list")
                         
                 else:
-                    self.log_test("vehicles", "Get all vehicles", False, f"Expected 9 vehicles, got {vehicle_count}")
+                    self.log_test("vehicles", "Vehicle count verification", False, f"Expected 16 vehicles, got {vehicle_count}")
                 
                 # Store a vehicle ID for individual testing
                 self.test_vehicle_id = data["data"][0]["_id"] if data["data"] else None
+                
+                # Store all vehicles for detailed testing
+                self.all_vehicles = data["data"]
             else:
                 self.log_test("vehicles", "Get all vehicles", False, "Invalid response format")
         else:
