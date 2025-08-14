@@ -26,7 +26,7 @@ export const vehicles = [
   {
     id: 2,
     name: "XUV 700",
-    image: "https://thecomfortjourney.com/uploads/1745417103244.jpg",
+    image: "/assets/xuv 700.jpg",
     transmission: "Manual",
     fuelType: "Diesel",
     fuelEfficiency: "15/km",
