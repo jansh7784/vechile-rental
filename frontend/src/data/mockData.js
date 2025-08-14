@@ -47,7 +47,7 @@ export const vehicles = [
   {
     id: 3,
     name: "Scorpio N",
-    image: "https://thecomfortjourney.com/uploads/1748598357178.jpg",
+    image: "/assets/Scorpio N.jpg",
     transmission: "Manual",
     fuelType: "Diesel",
     fuelEfficiency: "15/km",
