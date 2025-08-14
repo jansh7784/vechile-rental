@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { Shield, Users, Award, Clock, Car, Globe, Heart, Star } from 'lucide-react';
+import { Shield, Users, Award, Clock, Car, Globe, Heart } from 'lucide-react';
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
 import Header from './Header';
 import Footer from './Footer';
-import { aboutPageTestimonials } from '../data/mockData';
 
 const AboutPage = () => {
   const [user, setUser] = useState(null);
