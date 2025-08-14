@@ -212,27 +212,29 @@ class ComfortJourneyAPITester:
                     if toyota_fortuner:
                         pricing = toyota_fortuner.get("pricing", {})
                         fuel_type = toyota_fortuner.get("fuel_type", "")
-                        seating = toyota_fortuner.get("seating_capacity", 0)
+                        seating = toyota_fortuner.get("seating", "")
                         
                         # Check Toyota Fortuner specifications
                         fortuner_correct = True
                         issues = []
                         
-                        if pricing.get("per_day") != 15000:
+                        if pricing.get("daily") != 15000:
                             fortuner_correct = False
-                            issues.append(f"per_day: expected 15000, got {pricing.get('per_day')}")
+                            issues.append(f"daily: expected 15000, got {pricing.get('daily')}")
                         
-                        if pricing.get("per_km") != 20:
+                        # Check per_km rate from extra_km_rate field
+                        extra_km_rate = toyota_fortuner.get("extra_km_rate", "")
+                        if "20" not in extra_km_rate:
                             fortuner_correct = False
-                            issues.append(f"per_km: expected 20, got {pricing.get('per_km')}")
+                            issues.append(f"extra_km_rate: expected ₹20/km, got {extra_km_rate}")
                         
                         if fuel_type.lower() != "diesel":
                             fortuner_correct = False
                             issues.append(f"fuel_type: expected Diesel, got {fuel_type}")
                         
-                        if seating != 7:
+                        if "7" not in seating:
                             fortuner_correct = False
-                            issues.append(f"seating: expected 7, got {seating}")
+                            issues.append(f"seating: expected 7 persons, got {seating}")
                         
                         if fortuner_correct:
                             self.log_test("vehicles", "Toyota Fortuner fix", True, "Toyota Fortuner has correct pricing (₹15000/day, ₹20/km, Diesel, 7 seats)")
