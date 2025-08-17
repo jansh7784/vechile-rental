@@ -85,7 +85,7 @@ const Header = ({ onSearchClick }) => {
                 <div className="relative">
                   <Input
                     type="text"
-                    placeholder="Search cars..."
+                    placeholder={t('searchPlaceholder')}
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     className="w-full pr-10"
