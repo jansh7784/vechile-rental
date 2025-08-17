@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { ChevronLeft, ChevronRight, Play, ArrowRight } from 'lucide-react';
 import { Button } from './ui/button';
 import { heroSlides } from '../data/mockData';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const HeroSection = ({ onBookNowClick }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
