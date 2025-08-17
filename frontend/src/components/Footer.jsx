@@ -42,7 +42,7 @@ const Footer = () => {
                 className="w-10 h-10 bg-green-600 hover:bg-green-700 rounded-full flex items-center justify-center transition-colors duration-200"
                 title="WhatsApp"
               >
-                <img src="https://img.icons8.com/?size=100&id=QkXeKixybttw&format=png&color=000000" alt="WhatsApp" className="h-5 w-5 invert" />
+                <img src="https://img.icons8.com/?size=100&id=BkugfgmBwtEI&format=png&color=000000" alt="WhatsApp" className="h-5 w-5 invert" />
               </button>
               <button 
                 onClick={handleInstagram}
