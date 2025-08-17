@@ -190,7 +190,7 @@ const ContactPage = () => {
                       rel="noopener noreferrer"
                       className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center text-white hover:shadow-lg transition-shadow"
                     >
-                      <img src="https://img.icons8.com/?size=100&id=QkXeKixybttw&format=png&color=000000" alt="WhatsApp" className="h-5 w-5 invert" />
+                      <img src="https://img.icons8.com/?size=100&id=BkugfgmBwtEI&format=png&color=000000" alt="WhatsApp" className="h-5 w-5 invert" />
                     </a>
                   </div>
                 </CardContent>
