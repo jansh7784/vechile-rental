@@ -3,6 +3,8 @@ import { Search, Menu, X, MessageCircle, Phone, Instagram } from 'lucide-react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { navigationLinks } from '../data/mockData';
+import { useLanguage } from '../contexts/LanguageContext';
+import LanguageToggle from './LanguageToggle';
 
 const Header = ({ onSearchClick }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
