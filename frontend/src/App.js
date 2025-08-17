@@ -9,6 +9,7 @@ import SpecialOffers from "./components/SpecialOffers";
 import VehiclesCatalog from "./components/VehiclesCatalog";
 import Footer from "./components/Footer";
 import BlogsPage from "./components/BlogsPage";
+import BlogDetail from "./components/BlogDetail";
 import ContactPage from "./components/ContactPage";
 import FAQsPage from "./components/FAQsPage";
 import AboutPage from "./components/AboutPage";
