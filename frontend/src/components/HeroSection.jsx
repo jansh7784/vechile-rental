@@ -130,12 +130,12 @@ const HeroSection = ({ onBookNowClick }) => {
         <div className="transform transition-all duration-1000 ease-out">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-bold mb-4 sm:mb-6 leading-tight animate-fade-in-up">
             <span className="bg-gradient-to-r from-white via-yellow-200 to-white bg-clip-text text-transparent">
-              {heroSlides[currentSlide].title}
+              {currentSlide === 0 ? t('heroTitle') : heroSlides[currentSlide].title}
             </span>
           </h1>
           
           <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-8 sm:mb-10 opacity-90 max-w-4xl mx-auto font-light animate-fade-in-up animation-delay-300 px-4">
-            {heroSlides[currentSlide].subtitle}
+            {currentSlide === 0 ? t('heroSubtitle') : heroSlides[currentSlide].subtitle}
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 animate-fade-in-up animation-delay-600 px-4">
