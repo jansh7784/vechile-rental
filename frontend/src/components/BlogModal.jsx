@@ -108,7 +108,7 @@ const BlogModal = ({ blog, isOpen, onClose }) => {
                 <Button 
                   className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-6 py-2 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
                   onClick={() => {
-                    const phoneNumber = "919098103725";
+                    const phoneNumber = "917400941274";
                     const message = `Hello, I want to book a car from Car2go to visit ${blog.title.split(' ')[0]}.`;
                     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
                     window.open(whatsappURL, '_blank');
