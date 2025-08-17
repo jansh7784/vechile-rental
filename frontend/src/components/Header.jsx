@@ -101,7 +101,10 @@ const Header = ({ onSearchClick }) => {
             </div>
 
             {/* Right Side Actions */}
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-2">
+              {/* Language Toggle */}
+              <LanguageToggle />
+              
               {/* Mobile Search Button */}
               <button className="lg:hidden p-2 text-gray-400 hover:text-blue-600">
                 <Search className="h-5 w-5" />
@@ -113,7 +116,7 @@ const Header = ({ onSearchClick }) => {
                 size="sm" 
                 className="bg-gradient-to-r from-gray-800 to-black hover:from-gray-900 hover:to-gray-800 text-white font-bold"
               >
-                Book Now
+                {t('bookNow')}
               </Button>
 
               {/* Mobile Menu Button */}
