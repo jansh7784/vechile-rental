@@ -215,11 +215,128 @@ img[data-loaded="true"] {
     animation: floating 3s ease-in-out infinite;
 }
 
+/* Blog Content Styles */
+.blog-content h1 {
+    font-size: 2.25rem;
+    font-weight: bold;
+    color: #1a202c;
+    margin: 2rem 0 1rem 0;
+    line-height: 1.2;
+}
+
+.blog-content h2 {
+    font-size: 1.875rem;
+    font-weight: bold;
+    color: #2d3748;
+    margin: 1.5rem 0 1rem 0;
+    border-bottom: 2px solid #3182ce;
+    padding-bottom: 0.5rem;
+}
+
+.blog-content h3 {
+    font-size: 1.5rem;
+    font-weight: semibold;
+    color: #2d3748;
+    margin: 1.25rem 0 0.75rem 0;
+}
+
+.blog-content p {
+    color: #4a5568;
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+    font-size: 1.125rem;
+}
+
+.blog-content ul, .blog-content ol {
+    margin: 1.25rem 0;
+    padding-left: 2rem;
+}
+
+.blog-content ul li {
+    list-style-type: disc;
+    color: #4a5568;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+    font-size: 1.125rem;
+}
+
+.blog-content ol li {
+    list-style-type: decimal;
+    color: #4a5568;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+    font-size: 1.125rem;
+}
+
+.blog-content strong {
+    font-weight: bold;
+    color: #2d3748;
+}
+
+.blog-content em {
+    font-style: italic;
+    color: #4a5568;
+}
+
+.blog-content .blog-hero-image {
+    width: 100%;
+    height: auto;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    margin: 1.5rem 0;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.blog-content blockquote {
+    border-left: 4px solid #3182ce;
+    padding-left: 1.5rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: #4a5568;
+    background-color: #f7fafc;
+    padding: 1rem 1.5rem;
+    border-radius: 0.375rem;
+}
+
+/* Text truncation utilities */
+.line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
 /* Responsive optimizations */
 @media (max-width: 768px) {
     .animate-fade-in-up,
     .animate-slide-in-left,
     .animate-slide-in-right {
         animation-duration: 0.5s;
+    }
+    
+    .blog-content h1 {
+        font-size: 1.875rem;
+    }
+    
+    .blog-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .blog-content h3 {
+        font-size: 1.25rem;
+    }
+    
+    .blog-content p,
+    .blog-content ul li,
+    .blog-content ol li {
+        font-size: 1rem;
     }
 }
