@@ -3,6 +3,7 @@ import { Phone, Mail, MapPin, Instagram, MessageCircle } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const Footer = () => {
+  const { t } = useLanguage();
   const handleWhatsApp = () => {
     const phoneNumber = "917400941274";
     const whatsappURL = `https://wa.me/${phoneNumber}`;
