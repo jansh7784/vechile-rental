@@ -9,6 +9,7 @@ import LanguageToggle from './LanguageToggle';
 const Header = ({ onSearchClick }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const { t } = useLanguage();
 
   const handleSearch = (e) => {
     e.preventDefault();
