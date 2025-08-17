@@ -104,6 +104,7 @@ function App() {
           <Route path="/services/bookcar" element={<ServicesPage />} />
           <Route path="/faqs" element={<FAQsPage />} />
           <Route path="/blogs" element={<BlogsPage />} />
+          <Route path="/blogs/:slug" element={<BlogDetail />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/cookie-policy" element={<CookiePolicy />} />
