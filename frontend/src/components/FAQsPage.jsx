@@ -268,7 +268,7 @@ const FAQsPage = () => {
               <Phone className="h-6 w-6" />
               <div className="text-left">
                 <div className="font-semibold">Call Support</div>
-                <div className="text-sm opacity-80">+91 90981 03725</div>
+                <div className="text-sm opacity-80">+91 74009 41274</div>
               </div>
             </Button>
           </div>
