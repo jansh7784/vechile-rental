@@ -37,7 +37,7 @@ const BlogsPage = () => {
   }, [searchQuery, selectedCategory]);
 
   const handleBookNow = () => {
-    const phoneNumber = "919098103725";
+    const phoneNumber = "917400941274";
     const message = "Hello, I want to book a car from Car2go.";
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappURL, '_blank');
@@ -52,6 +52,11 @@ const BlogsPage = () => {
     });
   };
 
+  const handleReadMore = (blog) => {
+    // Create and navigate to individual blog page
+    window.location.href = `/blogs/${blog.slug}`;
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
@@ -60,10 +65,10 @@ const BlogsPage = () => {
       <section className="bg-gradient-to-r from-blue-600 to-indigo-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Travel Stories & Tips
+            Travel Stories & Destination Guide
           </h1>
           <p className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto">
-            Discover amazing destinations, get expert travel advice, and learn everything about car rentals from our Car2go travel experts.
+            Discover amazing destinations around Indore, get expert travel advice, and explore the best places to visit with Car2go's self-drive car rentals.
           </p>
         </div>
       </section>
@@ -77,7 +82,7 @@ const BlogsPage = () => {
                 <Search className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
                 <Input
                   type="text"
-                  placeholder="Search articles..."
+                  placeholder="Search travel stories..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="pl-10 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
@@ -188,7 +193,7 @@ const BlogsPage = () => {
                       variant="outline" 
                       size="sm" 
                       className="w-full group border-blue-200 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all duration-200"
-                      onClick={() => window.location.href = `/blogs/${blog.slug}`}
+                      onClick={() => handleReadMore(blog)}
                     >
                       Read Full Article
                       <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
@@ -227,15 +232,15 @@ const BlogsPage = () => {
       <section className="py-16 bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h3 className="text-2xl md:text-3xl font-bold mb-4">
-            Ready to Explore These Destinations?
+            Ready to Explore These Amazing Destinations?
           </h3>
           <p className="text-lg opacity-90 mb-8">
-            Book your perfect rental car with Car2go and start your adventure today!
+            Book your perfect self-drive rental car with Car2go and start your adventure today! Visit temples, heritage sites, and scenic spots around Indore comfortably.
           </p>
           <Button 
             onClick={handleBookNow}
             size="lg"
-            className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold px-8 py-3 rounded-full transform hover:scale-105 transition-all duration-300"
+            className="bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-black font-bold px-8 py-3 rounded-full transform hover:scale-105 transition-all duration-300"
           >
             Book Your Car Now
             <ArrowRight className="h-5 w-5 ml-2" />
