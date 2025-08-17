@@ -16,20 +16,20 @@ const Header = ({ onSearchClick }) => {
   };
 
   const handleBookNow = () => {
-    const phoneNumber = "919098103725";
+    const phoneNumber = "917400941274";
     const message = "Hello, I want to book a car from Car2go.";
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappURL, '_blank');
   };
 
   const handleWhatsApp = () => {
-    const phoneNumber = "919098103725";
+    const phoneNumber = "917400941274";
     const whatsappURL = `https://wa.me/${phoneNumber}`;
     window.open(whatsappURL, '_blank');
   };
 
   const handleCall = () => {
-    window.open('tel:+919098103725', '_self');
+    window.open('tel:+917400941274', '_self');
   };
 
   const handleInstagram = () => {
@@ -104,11 +104,11 @@ const Header = ({ onSearchClick }) => {
                 <Search className="h-5 w-5" />
               </button>
 
-              {/* Book Now Button */}
+              {/* Book Now Button - Changed to blackish */}
               <Button 
                 onClick={handleBookNow} 
                 size="sm" 
-                className="bg-blue-600 hover:bg-blue-700"
+                className="bg-gradient-to-r from-gray-800 to-black hover:from-gray-900 hover:to-gray-800 text-white font-bold"
               >
                 Book Now
               </Button>
@@ -164,19 +164,19 @@ const Header = ({ onSearchClick }) => {
         </div>
       </header>
 
-      {/* Contact Buttons - Fixed on right side */}
+      {/* Contact Buttons - Fixed on right side - Updated phone numbers */}
       <div className="fixed right-4 top-1/2 transform -translate-y-1/2 flex flex-col space-y-3 z-40">
         <button 
           onClick={handleCall}
           className="w-12 h-12 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg transition-colors duration-200"
-          title="Call +91 90981 03725"
+          title="Call +91 74009 41274"
         >
           <Phone className="h-6 w-6 text-white" />
         </button>
         <button 
           onClick={handleWhatsApp}
           className="w-12 h-12 bg-green-600 hover:bg-green-700 rounded-full flex items-center justify-center shadow-lg transition-colors duration-200"
-          title="WhatsApp +91 90981 03725"
+          title="WhatsApp +91 74009 41274"
         >
           <img src="https://img.icons8.com/?size=100&id=QkXeKixybttw&format=png&color=000000" alt="WhatsApp" className="h-6 w-6 invert" />
         </button>

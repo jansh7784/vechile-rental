@@ -29,7 +29,7 @@ const Home = () => {
   const [searchQuery, setSearchQuery] = useState('');
 
   const handleBookNow = (vehicle = null) => {
-    const phoneNumber = "919098103725"; // Primary number
+    const phoneNumber = "917400941274"; // Updated primary number
     let message = "Hello, I want to book a car from Car2go.";
     
     if (vehicle) {

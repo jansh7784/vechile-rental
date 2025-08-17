@@ -3,7 +3,7 @@ import { Phone, Mail, MapPin, Instagram, MessageCircle } from 'lucide-react';
 
 const Footer = () => {
   const handleWhatsApp = () => {
-    const phoneNumber = "919098103725";
+    const phoneNumber = "917400941274";
     const whatsappURL = `https://wa.me/${phoneNumber}`;
     window.open(whatsappURL, '_blank');
   };
@@ -78,7 +78,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Contact Info - Updated phone numbers */}
           <div className="space-y-4">
             <h4 className="text-lg font-semibold">Contact Info</h4>
             <div className="space-y-3 text-sm">
@@ -86,17 +86,10 @@ const Footer = () => {
                 <Phone className="h-4 w-4 text-blue-400 flex-shrink-0" />
                 <div>
                   <button 
-                    onClick={() => handleCall('+919098103725')}
+                    onClick={() => handleCall('+917400941274')}
                     className="text-gray-300 hover:text-white transition-colors duration-200"
                   >
-                    +91 90981 03725
-                  </button>
-                  <br />
-                  <button 
-                    onClick={() => handleCall('+917225960702')}
-                    className="text-gray-300 hover:text-white transition-colors duration-200"
-                  >
-                    +91 7225960702
+                    +91 74009 41274
                   </button>
                 </div>
               </div>
