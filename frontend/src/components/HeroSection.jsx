@@ -8,6 +8,7 @@ const HeroSection = ({ onBookNowClick }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [loadedImages, setLoadedImages] = useState(new Set());
+  const { t } = useLanguage();
 
   // Preload images for faster transitions
   useEffect(() => {
