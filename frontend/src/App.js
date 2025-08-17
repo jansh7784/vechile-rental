@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+// Context
+import { LanguageProvider } from "./contexts/LanguageContext";
+
 // Components
 import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
