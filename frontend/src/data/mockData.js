@@ -452,9 +452,9 @@ export const features = [
 
 // Contact information
 export const contactInfo = {
-  primaryPhone: "+91 90981 03725",
-  backupPhone: "+91 7225960702",
-  whatsapp: "919098103725",
+  primaryPhone: "+91 74009 41274",
+  backupPhone: "+91 74009 41274",
+  whatsapp: "917400941274",
   instagram: "https://www.instagram.com/car2go_mp09?igsh=aTM3cXpyYjZ3azg3"
 };
 
