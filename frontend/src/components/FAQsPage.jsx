@@ -61,14 +61,14 @@ const FAQsPage = () => {
   };
 
   const handleWhatsApp = () => {
-    const phoneNumber = "919098103725";
+    const phoneNumber = "917400941274";
     const message = "Hello, I have a question about Car2go services.";
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappURL, '_blank');
   };
 
   const handleCall = () => {
-    window.open('tel:+919098103725', '_self');
+    window.open('tel:+917400941274', '_self');
   };
 
   return (
