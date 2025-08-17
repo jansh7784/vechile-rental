@@ -82,8 +82,8 @@ const ContactPage = () => {
     {
       icon: Phone,
       title: 'Call Us',
-      details: ['+91 90981 03725', '+91 7225960702'],
-      action: 'tel:+919098103725'
+      details: ['+91 74009 41274'],
+      action: 'tel:+917400941274'
     },
     {
       icon: Mail,
@@ -185,7 +185,7 @@ const ContactPage = () => {
                       <Instagram className="h-5 w-5" />
                     </a>
                     <a
-                      href="https://wa.me/919098103725"
+                      href="https://wa.me/917400941274"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center text-white hover:shadow-lg transition-shadow"

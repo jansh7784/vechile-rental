@@ -6,7 +6,7 @@ import ImportantPoints from './ImportantPoints';
 
 const ServicesPage = () => {
   const handleBookNow = (vehicle = null) => {
-    const phoneNumber = "919098103725";
+    const phoneNumber = "917400941274"; // Updated phone number
     let message = "Hello, I want to book a car from Car2go.";
     
     if (vehicle) {
