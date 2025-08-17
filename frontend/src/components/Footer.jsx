@@ -58,20 +58,20 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold">Quick Links</h4>
+            <h4 className="text-lg font-semibold">{t('quickLinks')}</h4>
             <ul className="space-y-2 text-sm">
-              <li><a href="/" className="text-gray-300 hover:text-white transition-colors duration-200">Home</a></li>
-              <li><a href="/about" className="text-gray-300 hover:text-white transition-colors duration-200">About Us</a></li>
-              <li><a href="/services" className="text-gray-300 hover:text-white transition-colors duration-200">Our Services</a></li>
-              <li><a href="/blogs" className="text-gray-300 hover:text-white transition-colors duration-200">Travel Blogs</a></li>
-              <li><a href="/contact" className="text-gray-300 hover:text-white transition-colors duration-200">Contact</a></li>
-              <li><a href="/faqs" className="text-gray-300 hover:text-white transition-colors duration-200">FAQs</a></li>
+              <li><a href="/" className="text-gray-300 hover:text-white transition-colors duration-200">{t('home')}</a></li>
+              <li><a href="/about" className="text-gray-300 hover:text-white transition-colors duration-200">{t('about')}</a></li>
+              <li><a href="/services" className="text-gray-300 hover:text-white transition-colors duration-200">{t('services')}</a></li>
+              <li><a href="/blogs" className="text-gray-300 hover:text-white transition-colors duration-200">{t('blogs')}</a></li>
+              <li><a href="/contact" className="text-gray-300 hover:text-white transition-colors duration-200">{t('contact')}</a></li>
+              <li><a href="/faqs" className="text-gray-300 hover:text-white transition-colors duration-200">{t('faqs')}</a></li>
             </ul>
           </div>
 
           {/* Legal */}
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold">Legal</h4>
+            <h4 className="text-lg font-semibold">{t('legal')}</h4>
             <ul className="space-y-2 text-sm">
               <li><a href="/privacy-policy" className="text-gray-300 hover:text-white transition-colors duration-200">Privacy Policy</a></li>
               <li><a href="/cookie-policy" className="text-gray-300 hover:text-white transition-colors duration-200">Cookie Policy</a></li>
@@ -82,7 +82,7 @@ const Footer = () => {
 
           {/* Contact Info - Updated phone numbers */}
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold">Contact Info</h4>
+            <h4 className="text-lg font-semibold">{t('contactInfo')}</h4>
             <div className="space-y-3 text-sm">
               <div className="flex items-center space-x-3">
                 <Phone className="h-4 w-4 text-blue-400 flex-shrink-0" />
