@@ -144,7 +144,7 @@ const HeroSection = ({ onBookNowClick }) => {
               onClick={onBookNowClick}
               className="w-full sm:w-auto bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-black font-bold px-8 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl rounded-full transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-yellow-500/25 group"
             >
-              <span className="mr-2">{heroSlides[currentSlide].ctaText}</span>
+              <span className="mr-2">{t('bookNow')}</span>
               <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform duration-300" />
             </Button>
             
@@ -154,7 +154,7 @@ const HeroSection = ({ onBookNowClick }) => {
               className="w-full sm:w-auto border-2 border-white/50 text-white hover:bg-white hover:text-black px-6 sm:px-8 py-4 sm:py-5 text-base sm:text-lg rounded-full backdrop-blur-sm transition-all duration-300 group"
             >
               <Play className="h-4 w-4 sm:h-5 sm:w-5 mr-2 group-hover:scale-110 transition-transform duration-300" />
-              Watch Tour
+              {t('watchTour')}
             </Button>
           </div>
         </div>
