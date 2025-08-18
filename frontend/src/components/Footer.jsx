@@ -119,20 +119,27 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
-          <div className="text-sm text-gray-400 mb-4 md:mb-0">
-            © 2025 Car2go. All rights reserved.
-          </div>
-          <div className="flex space-x-6 text-sm">
-            <a href="/privacy" className="text-gray-400 hover:text-white transition-colors duration-200">Privacy Policy</a>
-            <a href="/terms" className="text-gray-400 hover:text-white transition-colors duration-200">Terms of Service</a>
-            <a href="/sitemap" className="text-gray-400 hover:text-white transition-colors duration-200">Sitemap</a>
-          </div>
-        </div>
-      </div>
-    </footer>
-  );
+       {/* Bottom Bar */}
+<div className="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+  <div className="text-sm text-gray-400 mb-4 md:mb-0">
+    © 2025 Car2go. All rights reserved. | Made by Ansh 
+    <a 
+      href="https://wa.me/917425980850" 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      className="ml-2 text-green-500 hover:text-green-400 transition-colors duration-200"
+    >
+      WhatsApp
+    </a>
+  </div>
+  <div className="flex space-x-6 text-sm">
+    <a href="/privacy" className="text-gray-400 hover:text-white transition-colors duration-200">Privacy Policy</a>
+    <a href="/terms" className="text-gray-400 hover:text-white transition-colors duration-200">Terms of Service</a>
+    <a href="/sitemap" className="text-gray-400 hover:text-white transition-colors duration-200">Sitemap</a>
+  </div>
+</div>
+</div>
+</footer>
+);
 };
-
 export default Footer;
