@@ -119,17 +119,18 @@ const Footer = () => {
           </div>
         </div>
 
-       {/* Bottom Bar */}
+ 
+{/* Bottom Bar */}
 <div className="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
   <div className="text-sm text-gray-400 mb-4 md:mb-0">
-    © 2025 Car2go. All rights reserved. | Made by Ansh 
+    © 2025 Car2go. All rights reserved. | Made by{" "}
     <a 
       href="https://wa.me/917425980850" 
       target="_blank" 
       rel="noopener noreferrer" 
-      className="ml-2 text-green-500 hover:text-green-400 transition-colors duration-200"
+      className="text-green-500 hover:text-green-400 transition-colors duration-200"
     >
-      WhatsApp
+      Ansh
     </a>
   </div>
   <div className="flex space-x-6 text-sm">
